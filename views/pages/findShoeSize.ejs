@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); -%>
+  </head>
+  <body>
+    <%- include('../partials/nav'); -%>
+    <div class="container">
+      <nav>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-items">
+            <a href="/home">Home</a>
+          </li>
+          <span>&ThickSpace;&#62;&ThickSpace;</span>
+          <li class="breadcrumb-item active">How to find your perfect shoe size</li>
+        </ul>
+      </nav>
+      <div class="guidshoesize-container">
+        <h1 class = "guide-title">How to find your perfect shoe size</h1>
+        <div class="guide-toc-container">
+          <p class = "guide-toc-title">Table of contents</p>
+          <ul class = "guide-toc-list">
+            <li> <a href="#stepstodo">How to find perfect shoes that fit your feet most </a> </li>
+            <li> <a href="#palladiumsize"> Palladium shoe size for both men and women </a> </li>
+            <li> <a href="#conversesize"> Converse shoe size for both men and women </a> </li>
+            <li> <a href="#vanssize">Vans shoe size for both men and women </a> </li>
+          </ul>
+        </div>
+        <div id = "stepstodo" class = "guide-toc-subtitle">
+          <p>How to find perfect shoes that fit your feet most</p>
+          <span>
+            Step 1: Prepare a sheet of A4 paper and place them close to the wall. Step your foot in the center of the paper so that the heel touches the wall.
+          </span>
+          <span>
+            Step 2: Use a point to write on the paper where the toe is longest and then continue to draw the shape of the foot. Choose the side with the largest foot if the size of both feet are not the same.
+          </span>
+          <span>
+            Step 3: Measure from the longest toe to the heel, so you can get the exact size of your foot.
+          </span>
+        </div>
+        <div id = "palladiumsize" class = "guide-toc-subtitle">
+          <p>Palladium shoe size chart for both men and women</p>
+          <img src="images/palladium-sizechart.jpg" alt="Palladium size chart"/>
+        </div>
+        <div id = "conversesize" class = "guide-toc-subtitle">
+          <p>Converse shoe size chart for both men and women</p>
+          <img src="images/converse-sizechart.jpg" alt="Converse size chart"/>
+        </div>
+        <div id = "vanssize" class = "guide-toc-subtitle">
+          <p>Vans shoe size chart for both men and women</p>
+          <img src="images/vans-sizechart.jpg" alt="Vans size chart"/>
+        </div>
+      </div>
+    </div>
+    <%- include('../partials/footer'); -%> <%-
+    include('../partials/script-line'); -%>
+  </body>
+</html>

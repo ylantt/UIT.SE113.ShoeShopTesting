@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../template/header.ejs'); -%>
+  </head>
+  <body>
+    <div class="d-flex h-100">
+      <div class="col-2 pl-0 h-100 w-25 fixed-top">
+        <%- include('../../template/sidebar.ejs'); -%>
+      </div>
+      <div class="col-12 w-100 pr-0">
+        <%- include('../../template/navbar.ejs'); -%>
+        <div class="col-10 ml-auto">
+          <div class="d-flex justify-content-between">
+            <h1 class="text-primary">Categories</h1>
+            <form class="form-inline my-2 my-lg-0">
+              <input
+                class="form-control mr-sm-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button
+                class="btn btn-outline-primary my-2 my-sm-0"
+                type="submit"
+              >
+                Search
+              </button>
+            </form>
+          </div>
+
+          <h4 class="text-info pb-2">Add category</h4>
+          <form
+            class="ml-1 cate needs-validation"
+            action="category/adddb"
+            method="POST"
+            novalidate
+          >
+            <div class="form-group row">
+              <label for="cateName" class="col-1">Name: </label>
+              <div class="col-3">
+                <input
+                  type="text"
+                  name="cateName"
+                  id="cateName"
+                  class="form-control"
+                  required
+                />
+                <div class="invalid-feedback">Please fill in this field!</div>
+              </div>
+              <button
+                class="btn btn-primary col-1 submit"
+                type="submit"
+                style="height: 38px"
+              >
+                Add
+              </button>
+            </div>
+          </form>
+
+          <h4 class="text-info pb-2 mt-5">Category List</h4>
+          <table class="table table-hover" id="table">
+            <tr>
+              <th>ID</th>
+              <th>Category Name</th>
+              <th>&nbsp;</th>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>
+                <button class="btn btn-success" data-toggle="modal" data-target="#Edit">Edit</button>
+                <button
+                  class="btn btn-danger ml-2 deleteBtn"
+                  id="deleteBtn"
+                  data-toggle="modal"
+                  data-target="#deleteModal"
+                  data-id=" "
+                  data-link="category/"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!--Popup-->
+    <div class="modal fade" id="Edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group mx-sm-3 mb-2" >
+                <label for="exampleInputEmail1">ID</label>
+                <input type="text" class="form-control" id="editID" placeholder="Enter ID">
+              </div>
+              <div class="form-group mx-sm-3 mb-2" >
+                <label for="exampleInputEmail1">Catagory</label>
+                <input type="text" class="form-control" id="editCatagory" placeholder="Enter Catagory">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <%- include('../../template/footer.ejs'); -%>
+</html>

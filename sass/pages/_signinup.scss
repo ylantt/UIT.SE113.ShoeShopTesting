@@ -1,0 +1,54 @@
+.text__box {
+  overflow: hidden;
+  font-size: 2rem;
+  margin: 0.8rem 0;
+  border-bottom: 0.2rem solid $color-dark-4;
+
+  &:hover {
+    border-bottom: 0.2rem solid $color-primary-blue;
+  }
+
+  input {
+    border: none;
+    outline: none;
+    background: none;
+    color: $color-black;
+    font-size: 1.5rem;
+    width: 100%;
+    height: 100%;
+    padding: 0.8rem;
+    display: block;
+    float: left;
+    margin: 0 0rem;
+  }
+}
+
+.modal {
+  background-color: $color-white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: all 0.2s ease-in-out;
+  z-index: 2000;
+  width: 45rem;
+
+  &__content {
+    margin: 0 5rem 3rem 5rem;
+  }
+
+  &__account {
+    font-weight: 400;
+    color: $color-primary-blue;
+  }
+
+  &__link {
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}

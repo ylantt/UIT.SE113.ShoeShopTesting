@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); -%>
+  </head>
+  <body>
+    <%- include('../partials/nav'); -%>
+    <div class="container">
+      <h1 class="clientorder__name">My Orders</h1>
+      <div class="clientorder__container">
+        <% if (orders) {%>
+          <table>
+            <tr>
+              <th>ID</th>
+              <th>Date</th>
+              <th>Products</th>
+              <th>Status</th>
+            </tr>
+            <% orders.forEach(order => { %>
+              <tr>
+                <td class="clientorder__name"><a href="orders/view/<%= order._id %>"><%= order._id %></a></td>
+                <td>
+                  <%= order.createdDate.getDate() %>/ <!--day-->
+                  <%= order.createdDate.getMonth()+1%>/ <!--month-->
+                  <%= order.createdDate.getFullYear()%> <!--year-->
+                </td>
+                <td>
+                  <% order.product.forEach(product => { %>
+                  <p><%= product.info.name %></p>
+                  <% }) %>
+                </td>
+                <td>
+                  <% if (order.status) { %>
+                    Shipped
+                  <% } else { %>
+                    Shipping
+                  <% } %>
+              </td> 
+              </tr>
+            <% }) %>
+          </table>
+        <% } else { %>
+          <p class="cart__noti">No products!</p>
+        <% } %>
+      </div>
+    </div>
+    <%- include('../partials/footer'); -%> <%-
+    include('../partials/script-line'); -%>
+  </body>
+</html>

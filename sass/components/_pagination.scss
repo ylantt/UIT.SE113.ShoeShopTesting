@@ -1,0 +1,27 @@
+.pagination {
+    // width: 40rem;
+    display: flex;
+    margin-left: 5rem;
+  }
+  .pagination a {
+    display: block;
+    color: $color-black;
+    float: left;
+    padding: 0.8rem 1.6rem;
+    text-decoration: none;
+    transition: background-color .3s;
+  }
+   
+.pagination .active a {
+    background-color: $color-primary-orange;
+    color: $color-white;
+    cursor: pointer;
+  }
+   
+.pagination li a:hover:not(.active a) {
+    color: $color-primary-orange;
+  }
+
+.pagination .disabled-link {
+    cursor: auto;
+  }

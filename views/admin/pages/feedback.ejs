@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../template/header.ejs'); -%>
+  </head>
+  <body>
+    <div class="d-flex h-100">
+      <div class="col-2 pl-0 h-100 w-25 fixed-top">
+        <%- include('../template/sidebar.ejs'); -%>
+      </div>
+      <div class="col-12 w-100 pr-0">
+        <%- include('../template/navbar.ejs'); -%>
+        <div class="col-10 ml-auto">
+          <div class="d-flex justify-content-between">
+            <h1 class="text-primary">Feedback</h1>
+            <form>
+              <div class="form-inline pt-2">
+                <div class="dropdown">
+                  <a
+                    class="btn btn-secondary dropdown-toggle"
+                    href="#"
+                    role="button"
+                    id="dropdownMenuLink"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Filter:
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">Product ID</a>
+                    <a class="dropdown-item" href="#">Product Image</a>
+                    <a class="dropdown-item" href="#">User ID</a>
+                    <a class="dropdown-item" href="#">Message</a>
+                    <a class="dropdown-item" href="#">Rating</a>
+                  </div>
+                </div>
+                <div class="col">
+                  <input
+                    type="text"
+                    class="form-control mr-sm-2"
+                    placeholder="Search"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-outline-primary my-2 my-sm-0"
+                >
+                  Search
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <table class="table table-hover ">
+            <thead>
+              <tr>
+                <th scope="col">Product ID</th>
+                <th scope="col">Product Image</th>
+                <th scope="col">User ID</th>
+                <th scope="col" >Message</th>
+                <th scope="col">Rating</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="align-middle">123456</td>
+                <td width="10%" class="align-middle">
+                  <img
+                    src="/images/giay-nike-chinh-hang.jpg"
+                    alt="userImage"
+                    class="img-fluid"
+                  />
+                </td>
+                <td width="10%" class="align-middle">185205xx</td>
+                <td width="40%" class="align-middle">Sản phẩm cũng đẹp, nhìn cũng cute, cũng được. Nói chung là chưa được hợp lý lắm mà thôi không sao</td>
+                <td width="10%" class="align-middle">4/5</td>
+                <td width="10%" class="align-middle">
+                    <button type="button" class="btn btn-success">Accept</button>
+                  </td>
+                <td width="10%" class="align-middle">
+                  <button type="button" class="btn btn-danger">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="align-middle">123456</td>
+                <td width="10%" class="align-middle">
+                  <img
+                    src="/images/giay-nike-chinh-hang.jpg"
+                    alt="userImage"
+                    class="img-fluid"
+                  />
+                </td>
+                <td width="10%" class="align-middle">185205xx</td>
+                <td width="40%" class="align-middle">Sản phẩm khá đẹp, không đến nỗi tệ, tuy nhiên so với mặt bằng chung các shop khác thì có vẻ chưa bằng</td>
+                <td width="10%" class="align-middle">3/5</td>
+                <td width="10%" class="align-middle">
+                    <button type="button" class="btn btn-success">Accept</button>
+                  </td>
+                <td width="10%" class="align-middle">
+                  <button type="button" class="btn btn-danger">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="align-middle">123456</td>
+                <td width="10%" class="align-middle">
+                  <img
+                    src="/images/giay-nike-chinh-hang.jpg"
+                    alt="userImage"
+                    class="img-fluid"
+                  />
+                </td>
+                <td width="10%" class="align-middle">185205xx</td>
+                <td width="40%" class="align-middle">Sản phẩm đẹp qué. Shop xịn qué. Ờ may dinh gút chóp chóp dè de</td>
+                <td width="10%" class="align-middle">5/5</td>
+                <td width="10%" class="align-middle">
+                    <button type="button" class="btn btn-success">Accept</button>
+                  </td>
+                <td width="10%" class="align-middle">
+                  <button type="button" class="btn btn-danger">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="align-middle">123456</td>
+                <td width="10%" class="align-middle">
+                  <img
+                    src="/images/giay-nike-chinh-hang.jpg"
+                    alt="userImage"
+                    class="img-fluid"
+                  />
+                </td>
+                <td width="10%" class="align-middle">185205xx</td>
+                <td width="40%" class="align-middle">Sao shop kì quá ta? Sao em đặt giao chủ nhật mà thứ 7 em không có hàng vậy? Tệ quá tệ không có lần 2</td>
+                <td width="10%" class="align-middle">1/5</td>
+                <td width="10%" class="align-middle">
+                    <button type="button" class="btn btn-success">Accept</button>
+                  </td>
+                <td width="10%" class="align-middle">
+                  <button type="button" class="btn btn-danger">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="align-middle">123456</td>
+                <td width="10%" class="align-middle">
+                  <img
+                    src="/images/giay-nike-chinh-hang.jpg"
+                    alt="userImage"
+                    class="img-fluid"
+                  />
+                </td>
+                <td width="10%" class="align-middle">185205xx</td>
+                <td width="40%" class="align-middle">Ok thôi thì cũng được, cho 5 sao khích lệ nhẹ nhẹ nhé</td>
+                <td width="10%" class="align-middle">4/5</td>
+                <td width="10%" class="align-middle">
+                    <button type="button" class="btn btn-success">Accept</button>
+                  </td>
+                <td width="10%" class="align-middle">
+                  <button type="button" class="btn btn-danger">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <nav aria-label="Page navigation example" class="float-right">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </body>
+  <%- include('../template/footer.ejs'); -%>
+</html>

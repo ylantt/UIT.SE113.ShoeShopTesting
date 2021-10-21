@@ -1,0 +1,62 @@
+.error {
+    &__title{
+        font-size: 2.0rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        position: relative;
+        padding-left: 4.0rem;
+
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            margin-top: -0.1rem;
+            display: block;
+            width: 2.0rem;
+            border-bottom: 0.2rem solid;
+        }
+    }
+    
+    &__more-detail{
+        padding-top:1.0rem;
+        margin-top:1.0rem;
+        font-size:2.5rem;
+        line-height:4.5rem;
+        margin-bottom:3rem;
+    }
+    
+    &__button{
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: $color-white;
+        text-transform: uppercase;
+        text-align: center;
+        display: inline-block;
+        padding: 0 4.0rem;
+        line-height: 4.0rem;
+        background-color: $color-black;
+        cursor: pointer;
+        transition: .4s;
+        &:hover{
+            letter-spacing: 0.2rem;
+        }
+    
+        &--large {
+            line-height: 6.0rem;
+            padding: 0 8.0rem;
+        } 
+    }
+    
+    &__detail{
+        font-size:7.0rem;
+        margin-top:1.0rem;
+        margin-bottom:1.5rem;
+        font-weight: 500;
+    }
+    
+    &__body{
+        padding: 15rem 0rem 1rem 20rem;
+    }
+}
+

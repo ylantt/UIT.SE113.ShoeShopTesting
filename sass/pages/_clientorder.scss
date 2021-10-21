@@ -1,0 +1,26 @@
+.clientorder{
+    margin: 10rem;
+    &__container{
+    & table{
+        margin: 5rem 0;
+        width: 100%;
+        border: 0.1rem solid $color-dark-4;
+        border-bottom: none;
+    }
+    & td{
+        border-bottom: 0.1rem solid $color-dark-4;
+        text-align: center;
+        height: 10rem;
+    }
+    & th {
+        padding-top: 1rem;
+        border-bottom: 0.1rem solid $color-dark-4;
+        text-align: center;
+        height: 1rem;
+    }
+}
+    &__name{
+        color: $color-primary-orange;
+        text-emphasis: bold;
+    }
+}

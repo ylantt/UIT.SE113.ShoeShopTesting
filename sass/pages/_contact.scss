@@ -1,0 +1,59 @@
+.contract__title{
+	text-align: center;
+}
+.contract__form{
+	margin: 0 auto;
+	padding: 30px;
+	align-items: center;
+	font-size: 22px;
+	
+}
+.contract__lable{
+	padding: 10px 0;
+	text-align: center;
+	width: auto;
+}
+.contract__input{
+	border: none;
+    border-bottom: 1px solid #ccc;
+	width: 500px;
+    padding: 5px;
+    background: none;
+	overflow: visible;
+	-webkit-writing-mode: horizontal-tb !important;
+	height: 40px;
+	font-size: 17px;
+	letter-spacing: normal;
+    word-spacing: normal;
+	
+}
+.contract__textarea{
+	background: none;
+	border: none;
+	width: 500px;
+	resize: vertical;
+	height: auto;
+	font-size: 17px;	
+	border-bottom: 1px solid #ccc;
+	letter-spacing: normal;
+    word-spacing: normal;
+	background: none;
+	overflow: visible;
+	-webkit-writing-mode: horizontal-tb !important;
+}
+.contract__btn{
+	align-items: center;
+	background-color: $color-primary-orange;
+	width: 120px;
+	height: 30px;
+	border: none;
+	border-radius: 2px;
+	text-decoration: black;
+	cursor: pointer;
+	transition: 0.3s;
+
+	&:hover{
+		background-color: $color-primary-brown;
+		color: $color-white;
+	}
+}

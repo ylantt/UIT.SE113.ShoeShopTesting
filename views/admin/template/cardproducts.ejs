@@ -1,0 +1,73 @@
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Image</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Category</th>
+        <th scope="col">Quantity In Stock</th>
+        <th scope="col">IsNew</th>
+        <th scope="col">Sales</th>
+        <th scopr="col" id="action-header">Action</th>
+        <th scope="col"><input type="checkbox" id="master-checkbox"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% products.forEach(product => { %>
+
+      <tr>
+        <td
+          style="width: 150px"
+          data-toggle="modal"
+          data-target="#productImage"
+        >
+        <img src="<%= product.coverImagePath %>" alt="productImage" class="img-fluid" />
+      </td>
+        <td
+          data-toggle="modal"
+          class="align-middle"
+          data-target="#productName"
+        ><%= product.name %></td>
+        <td
+          data-toggle="modal"
+          class="align-middle"
+          data-target="#productPrice"
+        >
+        <%= product.price %>&dollar;
+        </td>
+        <td
+          data-toggle="modal"
+          class="align-middle"
+          data-target="#productCategory"
+        ><%= product.category[0].name %></td>
+        <td
+          class="align-middle"
+          data-toggle="modal"
+          data-target="#productQuantity"
+        ><%= product.quantity %></td>
+        <td
+          class="text-danger align-middle"
+          data-toggle="modal"
+          data-target="#productIsNew"
+        ><%= product.condition %></td>
+        <td
+          data-toggle="modal"
+          class="align-middle"
+          data-target="#productSales"
+        >
+          <%= product.sale %> %
+        </td>
+        <td class="align-middle action-group">
+          <a href="edit-product/<%= product.id %>" class="btn btn-success">Edit</a>
+          <button type="button" class="btn btn-danger deleteBtn" data-toggle="modal"
+              data-target="#exampleModal" data-id="<%= product.id %>" data-name="<%= product.name %>" data-link="product/">
+              Delete
+            </button>
+        </td>
+        <td class="check-product align-middle d-none">
+          <input type="checkbox" data-id="<%= product.id %>">
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>

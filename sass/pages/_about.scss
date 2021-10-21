@@ -1,0 +1,87 @@
+.about {
+  margin-bottom: 15rem;
+  &__gallery-container {
+    display:flex;
+    margin: 2rem;
+  }
+  &__gallery {
+    margin: 2rem;
+    & img {
+      max-width: 30rem;
+      max-height: 20rem;
+      &:hover {
+        transition: 0.5s;
+        transform: scale(1.05);
+      }
+    }
+  }
+  &__desc {
+    padding: 2rem;
+    text-align:left;
+    & p {
+      padding: auto;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    & li {
+      padding-left: 1rem;
+      margin-left: 2rem;
+      position:relative;
+      font-size: 1.5rem;
+
+      &::before {
+        content: "";
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background: $color-primary-orange;
+        position: absolute;
+        top: 30%;
+        left: 0;
+      }
+    }
+  }
+  &__about-team {
+    margin: 3rem 20rem 5rem;
+    padding: 5rem 5rem;
+  }
+  &__about-team-title {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 5rem;
+  }
+  &__about-team-para {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0rem;
+    line-height: 3rem;
+    font-weight: 500;
+    font-size: 2rem;
+    & img {
+      box-shadow: 0.5rem 0.5rem $color-primary-orange;
+      width: 50rem;
+      height: 50rem;
+    }
+    & p {
+      margin-left: 5rem;
+      color: $color-dark-2;
+    }
+  }
+  &__about-smallteam {
+    margin: 0rem 5rem 5rem;
+    padding: 5rem 5rem;
+  }
+  &__about-team-smalltitle {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 2rem;
+    margin: 0 5rem 5rem 5rem;
+    border-bottom: solid 0.2rem $color-primary-orange;
+  }
+  &__about-team-smallertitle {
+    font-weight: 600;
+    font-size: 3rem;
+    margin: 0 5rem 2rem 5rem;
+  }
+}

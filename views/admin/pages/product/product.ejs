@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../template/header.ejs'); -%>
+  </head>
+  <body>
+    <div class="d-flex h-100">
+      <div class="col-2 pl-0 h-100 w-25 fixed-top">
+        <%- include('../../template/sidebar.ejs'); -%>
+      </div>
+      <div class="col-12 w-100 pr-0">
+        <%- include('../../template/navbar.ejs'); -%>
+        <div class="col-10 ml-auto p-0">
+          <% if (status=="Success") { %>
+            <div class="col-5 ml-auto alert alert-success alert-dismissible">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <strong>Thành công!</strong> Dữ liệu đã được gửi lên Database.
+            </div>
+            <% } else if (status=="Fail"){ %>
+              <div class="col-5 ml-auto alert alert-danger alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Thất bại!</strong> Không thể gửi dữ liệu lên Database.
+              </div>
+              <% } %>
+        </div>
+        <div class="col-10 ml-auto">
+          <div class="d-flex justify-content-between">
+            <h1 class="text-primary">Products</h1>
+            <form>
+              <div class="form-inline pt-2">
+                <div class="col">
+                  <a class="btn btn-info" href="/admin/add-product">Add</a>
+                </div>
+                <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
+                    <button class="nav-link" id="nav-sale-tab" data-bs-toggle="tab" data-bs-target="#nav-sale" type="button" role="tab" aria-controls="nav-sale" aria-selected="false">Sales</button>
+                    <button class="nav-link" id="nav-new-tab" data-bs-toggle="tab" data-bs-target="#nav-new" type="button" role="tab" aria-controls="nav-new" aria-selected="false">New</button>
+                  </div>
+                </nav>
+                <div class="col">
+                  <input type="text" class="form-control mr-sm-2" placeholder="Search" />
+                </div>
+                <button type="submit" class="btn btn-outline-primary my-2 my-sm-0 mr-sm-5">
+                  Search
+                </button>
+                <div class="d-none" id="check-product-buttons">
+                  <button class="btn btn-danger" id="check-product-delete">Delete Selected</button>
+                  <button class="btn btn-outline-secondary" id="check-product-cancel">Cancel</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+              <%- include('../../template/cardproducts.ejs', {products:product}); -%>
+          </div>
+          <div class="tab-pane fade" id="nav-sale" role="tabpanel" aria-labelledby="nav-sale-tab">
+            <%- include('../../template/cardproducts.ejs', {products:sales}); -%>
+          </div>
+          <div class="tab-pane fade" id="nav-new" role="tabpanel" aria-labelledby="nav-new-tab">
+            <%- include('../../template/cardproducts.ejs', {products:isNew}); -%>
+          </div>
+        </div>
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    Xác nhận xóa
+                  </h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Chắc chắn xóa Sản phẩm <span id="idTeam"></span>?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    Close
+                  </button>
+                  <form method="post" id="deleteBtnHref">
+                    <input type="submit" class="btn btn-danger" value="Xóa">
+                  </form>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
+  </div>
+</body>
+<%- include('../../template/footer.ejs'); -%>
+    <script>
+      $(document).on("click", ".deleteBtn", function () {
+        var id = $(this).data("id");
+        // alert(id);
+        var link = $(this).data("link");
+        $("#exampleModal #deleteBtnHref").attr(
+          "href",
+          link + "/deletedb/" + id
+        );
+        $("#exampleModal #idTeam").text(id);
+      });
+    </script>
+    <script> //show checkbox
+      const delay = ms => new Promise(res => setTimeout(res, ms));
+      var masterBtn = $("#master-checkbox")
+      var cancelBtn = $("#check-product-cancel")
+      var deleteSelected = $("#check-product-delete")
+      var checkboxs = $(".check-product input[type='checkbox']")
+      var checkboxGroup = $(".check-product, #check-product-buttons")
+      var actionGroup = $("#action-header, .action-group")
+
+      $(document).ready(function(){
+        masterBtn.prop("checked",false)
+      })
+
+      masterBtn.on("change", function(){
+        if (masterBtn.is(":checked")) {
+          checkboxs.prop("checked",true)
+          checkboxGroup.removeClass("d-none")
+          actionGroup.addClass("d-none")
+        } 
+        else checkboxs.prop("checked",false)
+      })
+
+      cancelBtn.on("click", function(){
+        checkboxGroup.addClass("d-none")
+        actionGroup.removeClass("d-none")
+        masterBtn.prop("checked",false)
+      })
+
+      deleteSelected.on("click", async function(e) {
+        e.preventDefault()
+        checkboxs.each(async function(index){
+          if ($(this).is(":checked")) {
+            const id = $(this).data("id")
+            await axios.post("product/delete/" + id + "?_method=DELETE")
+          }
+        })
+        await delay(200)
+        window.location = "products"
+      })
+    </script>
+    <script>//delete
+      $(document).on("click", ".deleteBtn", function () {
+        var id = $(this).data("id");
+        var name = $(this).data("name");
+        // alert(id);
+        var link = $(this).data("link");
+        $("#exampleModal #deleteBtnHref").attr(
+          "action",
+          link + "delete/" + id + "?_method=DELETE"
+        );
+        $("#exampleModal #idTeam").text(name);
+      });
+    </script>
+  </body>
+  <%- include('../../template/footer.ejs'); -%>
+</html>

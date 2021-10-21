@@ -1,0 +1,25 @@
+.btn {
+  padding: 1.5rem 3rem;
+  border: 0.2rem solid $color-black;
+
+  display: inline-block;
+}
+
+.btn-submit {
+  background: $color-primary-orange;
+  border: none;
+  display: block;
+  padding: 0.5rem 3rem;
+  font-size: 2rem;
+  cursor: pointer;
+  text-align: center;
+  margin: 3rem auto;
+  outline: none;
+  transition: all 0.2s ease-in;
+  border-radius: 10rem;
+
+  &:hover{
+      background-color: $color-primary-brown;
+      color: $color-white;
+  }
+}

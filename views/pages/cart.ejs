@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); -%>
+  </head>
+  <body>
+    <%- include('../partials/nav'); -%>
+    <div class="cart">
+      <div class="container">
+        <h3 class="cart__title">Cart</h3>
+        <% if (products) { %>
+        <div class="cart__page">
+          <table class="cart__table">
+            <tr>
+              <th class="cart__header">Product</th>
+              <th class="cart__header">Quantity</th>
+              <th class="cart__header">Subtotal</th>
+              <th class="cart__header"></th>
+            </tr>
+            <% products.forEach(product => { %>
+            <tr>
+              <td>
+                <div class="cart__info">
+                  <img src="<%= product.info.coverImagePath %>" alt="<%= product.info.name %>" />
+                  <div>
+                    <p class="cart__product-name">
+                      <%= product.info.name %>
+                    </p>
+                    <small
+                      >Price:
+                      <span class="cart__product-price">$<%= product.info.price %></span></small
+                    >
+                  </div>
+                </div>
+              </td>
+              <td><input type="number" value="<%= product.qty; %>" class="product-quantity" data-id="<%= product.info._id %>" min="1" max="999" /></td>
+              <td class="product-full-price" data-id="<%= product.info._id %>">$<%= product.info.price %></td>
+              <td class="remove-from-cart" data-id="<%= product.info._id %>"><i class="fas fa-trash-alt icon-trash"></i></td>
+            </tr>
+            <% }); %>
+          </table>
+        </div>
+      </div>
+
+      <div class="container cart__bottom">
+        <div class="cart__total">
+          <table>
+            <tr class="cart__total-resut">
+              <td>Total</td>
+              <td>
+                <input type="text" id="cart__totalMoney" name="cart__totalMoney" value="$<%= totalPrice %>">
+              </td>
+            </tr>
+          </table>
+        </div>
+        <a href="/checkout" class="cart__OrdBtn" >Proceed to checkout</a>
+          <% } else { %>
+            <p class="cart__noti">No products!</p>
+            <% } %>
+      </div>
+    </div>
+    <%- include('../partials/footer'); -%> <%-
+    include('../partials/script-line'); -%>
+  </body>
+</html>

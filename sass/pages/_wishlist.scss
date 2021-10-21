@@ -1,0 +1,88 @@
+.wishlist{
+    min-height: calc(100vh - 26.6rem - 10rem - 5rem); // minus footer height, nav height,.. 
+
+    &__noti {
+        text-align: center;
+        font-size: 4rem;
+        font-weight: 700;
+    }
+
+    &__title{
+        font-size: 4rem;
+        text-align: center;
+        color: $color-primary-orange;
+        font-weight: 700;
+        margin-top: 5rem;
+        margin-bottom: 2rem; 
+    }
+    &__page{
+        margin: 0  auto 10rem;
+    }
+    &__header{
+        text-align: left;
+        color: $color-primary-blue;
+        border-bottom: 2px solid $color-primary-orange;
+        // background: $color-primary-orange;
+        font-weight: 700;
+        padding: 0.75rem;
+    }
+    &__table{
+        max-width: 120rem;
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 2rem;
+        tr:not(:last-child){
+            border-bottom: 2px solid #FF7D00;
+        }
+        td{
+            padding: 2rem 0 0 1rem;
+            input{
+                width: 5.5rem;
+                height: 3rem;
+                padding: 0.5rem;
+            }
+            button{
+                border: none;   
+            }
+        }
+    }
+    &__info{
+        display: flex;
+        flex-wrap: wrap;
+        line-height: 2rem;
+        align-items: center;
+        img{
+            width: 13rem;
+            height: 13rem;
+            margin-left: -1rem;
+        }
+        div{
+            margin-left: 1.5rem;
+            line-height: 4rem;
+        }
+    }
+    &__addcart{
+        background-color:$color-primary-pink;
+        padding: 1rem 3rem;
+        font-weight: bold;
+        color: $color-primary-blue;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $color-primary-orange;
+            color: $color-white;
+        }
+    }
+    &__product-name {
+        color: $color-primary-blue;
+        font-weight: 700;
+    }
+    &__product-price {
+        color: $color-primary-orange;
+        font-weight: 700;
+    }
+    .fa, .fas {
+        font-weight: 900;
+        font-size: large;
+    }
+}

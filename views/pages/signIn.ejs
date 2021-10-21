@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); -%>
+  </head>
+  <body>
+    <%- include('../partials/nav'); -%>
+    <div class="card border-dark justify-content-center" style="max-width: 50rem; margin: 10rem auto">
+        <div class="card-header">
+            <h3 class="heading-h4">Sign in</h3>
+        </div>
+        <div class="card-body text-dark">
+            <form class="form" method="POST" action="/client/api/login">
+                <div class="close-icon icon" data-close-button>
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="text__box">
+                    <input type="text" data-test="signIn_username" placeholder="Enter your username or email" name="name" />
+                </div>
+                <div class="text__box">
+                    <input type="password" data-test="signIn_pass" placeholder="Enter your password" name="password" />
+                </div>
+                <input name="location" value=" " />
+                <div><%- include('../partials/message.ejs'); -%></div>
+                <input
+                    class="btn-submit"
+                    type="submit"
+                    name="submit"
+                    value="Sign in"
+                    id="login-btn"
+                    data-test="signIn_submitBtn"
+                />
+                <div style="display: flex; justify-content: space-between;">
+                    <div><a href="/forgotPassword" >Forgot password?</a></div>
+                    <div style="right: 0;">Not a member? <span style = "color: #FF7D00"> <a href="/signUp">Join Us.</a></span></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <%- include('../partials/footer'); -%> <%-
+    include('../partials/script-line'); -%>
+  </body>
+</html>

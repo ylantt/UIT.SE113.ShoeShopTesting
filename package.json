@@ -1,0 +1,62 @@
+{
+  "name": "UIT.SE113.ShoeShopTesting",
+  "version": "1.0.0",
+  "description": "Use testcafe package to test Sneaker City website",
+  "main": "app.js",
+  "scripts": {
+    "nodemon": "nodemon server.js",
+    "watch:sass": "node-sass sass/main.scss public/css/style.css -w",
+    "dev": "npm-run-all --parallel watch:sass nodemon",
+    "start": "node server.js",
+    "test": "testcafe chrome:headless test/**/*.test.js"
+  },
+  "author": "Group 21",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "connect-flash": "^0.1.1",
+    "country-state-city": "^3.0.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-generator": "^4.16.1",
+    "express-messages": "^1.0.1",
+    "express-mongo-sanitize": "^2.1.0",
+    "express-rate-limit": "^5.3.0",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.12.0",
+    "helmet": "^4.6.0",
+    "hpp": "^0.2.3",
+    "jquery": "^3.6.0",
+    "jquery-ui-dist": "^1.12.1",
+    "jquery-zoom": "^1.7.21",
+    "method-override": "^3.0.0",
+    "mongo": "^0.1.0",
+    "mongoose": "^5.12.14",
+    "mongoose-sequence": "^5.3.1",
+    "nodemailer": "^6.6.2",
+    "passport": "^0.4.1",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "replace": "^1.2.1",
+    "request": "^2.88.2",
+    "serve-favicon": "^2.5.0",
+    "slugify": "^1.5.1",
+    "stripe": "^8.161.0",
+    "validator": "^13.6.0",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.7",
+    "npm-run-all": "^4.1.5",
+    "testcafe": "^1.16.1"
+  },
+  "engines": {
+    "node": "12.16.x",
+    "npm": "6.13.x"
+  }
+}

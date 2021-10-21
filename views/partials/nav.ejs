@@ -1,0 +1,99 @@
+<nav class="nav">
+  <div class="container flex-center">
+    <ul class="flex-center list-pages">
+      <li <% if (title === 'Home') {%>class="active" <% } %> ><a href="/home">Home</a></li>
+      
+      <li <% if (title === 'About') { %>class="active" <% } %> ><a href="/about">About Us</a></li> 
+
+      <li class="nav--hover"><a href="/products">Collection</a></li>
+
+      <ul class="nav__sub-menu">
+        <li>
+          <a href="/products/palladium">
+            <div class="nav__img"><img src="/images/nav-palladium.jpg" alt="Palladium"></div>
+            <p>palladium</p>
+          </a>
+        </li>
+
+        <li>
+          <a href="/products/converse">
+           <div class="nav__img"><img src="/images/nav-converse.jpg" alt="Converse"></div> 
+            <p>converse</p>
+          </a>
+        </li>
+
+        <li>
+          <a href="/products/vans">
+            <div class="nav__img"><img src="/images/nav-vans.jpg" alt="Vans"></div>
+            <p>VANS</p>
+          </a>
+        </li>
+      </ul> 
+
+      <li <% if (title === 'Contact') { %>class="active" <% } %> ><a href="/contact">Contact Us</a></li> 
+    </ul>
+
+    <div class="nav__logo">
+      <%- include('./logo'); -%>
+    </div>
+
+    <ul class="flex-center">
+      <li class="nav__search">
+        <input class="nav__search--input scale0" id="nav-text-search" type="text" placeholder="Search Product">
+        <img src="/icon/loupe.svg" alt="Search" id="nav-logo-search" class="icon nav__search--icon" />
+      </li>
+
+      <div class="flex-center nav__collapse">
+        <li>
+          <a href="/wishlist" class="flex-center"
+            ><img src="/icon/like.svg" alt="Wish list" class="icon" /><span
+              class="nav__notification" id="wishlist-number"
+              ><% if (session.whilist != null && typeof session.whilist != 'underfined') {%>
+                <%= session.wishlist.totalQty %>
+              <%} else {%>
+                <%= 0%>
+              <%}%></span
+            ></a
+          >
+        </li>
+  
+        <li>
+          <a href="/cart" class="flex-center"
+            ><img src="/icon/shopping-bags.svg" alt="Cart" class="icon" /><span
+              class="nav__notification" id="cart-number"
+              >
+              <% if (typeof session.cart != 'undefined') {%>
+                <%= session.cart.totalQty %>
+              <%} else {%>
+                <%= 0%>
+              <%}%></span
+            ></a
+          >
+        </li>
+  
+        <li>
+          <a href="/account/show/" class="nav__button nav__account"></a>
+          <% if (session.user && typeof session.user != 'undefined') {%>
+            <div class="nav__dropdown">
+              <a id="account_dropdown" data-test="navbar_userName" class="nav__button" style = "border: 1px solid #FF7D00;border-radius: 5px; padding: 5px">
+                <%= session.user.userName %>
+              </a>
+              <div id="dropdown-menu" class="nav__dropdown-content">
+                <% if (session.user.role == 1) {%>
+                <a href="/admin" data-test="adminDashboardBtn">Admin Dashboard</a>
+                <%}%>
+                <a href="/account">My account</a>
+                <a href="/orders">My orders</a>
+                <a href="/logout" style="color: red">Log out</a>
+              </div>
+            </div>
+          <% } else { %>
+            <a href="/signIn" class="nav__button" style = "border: 1px solid #FF7D00;border-radius: 5px; padding: 5px">Sign In</a>
+            <a href="/signUp" class="nav__button">Sign up</a>
+          <% } %>
+          
+        </li>
+      </div>
+    </ul>
+  </div>
+</nav>

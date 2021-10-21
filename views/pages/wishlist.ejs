@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); -%>
+  </head>
+  <body>
+    <%- include('../partials/nav'); -%>
+    <div class="container">
+    <div class="wishlist">
+      <h3 class="wishlist__title">Wishlist</h3>
+      <% if (products) { %>
+      <div class="wishlist__page">
+        <table class="wishlist__table">
+          <thead>
+            <th class="wishlist__header">Product</th>
+            <th class="wishlist__header">Price</th>
+            <th class="wishlist__header"></th>
+            <th class="wishlist__header"></th>
+          </thead>
+          <tbody>
+            <% products.forEach(product => { %>
+            <tr>
+              <td>
+                <div class="wishlist__info">
+                  <img src="<%= product.coverImagePath %>" alt="<%= product.name %>" />
+                  <div>
+                    <p class="wishlist__product-name">
+                      <%= product.name %>
+                    </p>
+                  </div>
+                </div>
+              </td>
+
+              <td>
+                <span class="wishlist__product-price"
+                        >$<%= product.price %></span
+                      >
+              </td>
+
+              <td>
+                <button class="wishlist__addcart add-to-cart-button" data-id="<%= product._id %>">
+                  <i class="fas fa-shopping-cart"></i> Add to cart
+                </button>
+              </td>
+
+              <td>
+                <button class="remove-from-wishlist" data-id="<%= product._id %>">
+                  <i class="fas fa-trash-alt icon-trash" aria-hidden="true"></i>
+                </button>
+              </td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+      <% } else { %>
+        <p class="wishlist__noti">No items!</p>
+        <% } %>
+    </div>
+  </div>
+    <%- include('../partials/footer'); -%> <%-
+    include('../partials/script-line'); -%>
+  </body>
+</html>

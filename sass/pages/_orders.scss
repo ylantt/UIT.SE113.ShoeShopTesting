@@ -1,0 +1,36 @@
+.orders{
+    margin-bottom: 15rem;
+
+    &__title-container{
+        margin: 2rem 10rem;
+        text-align: center;
+        text-transform: capitalize;
+        color:$color-primary-orange;
+        font-weight: 700;
+        font-size: 4rem;
+    }
+    &__table-container{
+        margin: 5rem 10rem 15rem;
+    }
+    &__customers {
+        border-collapse: collapse;
+        width: 100%;
+      
+      
+    & td, & th {
+        padding: 8px;
+      }
+      
+    & tr:nth-child(even){background-color: $color-white;}
+      
+    & tr:hover {background-color: $color-dark-4;}
+      
+    & th {
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+        text-align: left;
+        background-color: $color-primary-blue;
+        color: $color-white;
+      }
+    }
+}

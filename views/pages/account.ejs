@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); -%>
+  </head>
+  <body>
+    <%- include('../partials/nav'); -%>
+    <div class="container">
+      <div class="right_flex_container">
+        <div class="account__text">
+          <h3>My account</h3>
+        </div>
+        <hr />
+        <% if (session.user && typeof session.user != 'undefined') {%>
+        <form
+          method="POST"
+          action="/account/updateDB/"
+          class="info_container_flex flex-center-column"
+        >
+          <div class="info_container_style">
+            <div class="d-flex">
+              <div class="info_container_style mr-5">
+                <label for="username">Username:</label><br />
+                <input
+                  type="text"
+                  id="UsrName"
+                  name="Username"
+                  class="text_info_style"
+                  value="<%= session.user.userName %>"
+                  readonly
+                />
+              </div>
+                <div class="info_container_style">
+                  <label for="FullName">Full name:</label><br />
+                  <input
+                    type="text"
+                    id="FullName"
+                    value="<%= session.user.fullName %>"
+                    name="FullName"
+                    class="text_info_style"
+                  />
+                </div>
+            </div>
+
+            <div class="d-flex">
+              <div class="info_container_style mr-5">
+                <label for="Phone_number">Phone number:</label><br />
+                <input
+                  type="text"
+                  id="PhoneNum"
+                  value="<%= session.user.phone %>"
+                  name="PhoneNum"
+                  class="text_info_style"
+                />
+              </div>
+
+              <div class="info_container_style">
+                <label for="email_info">Email:</label><br />
+                <input type="hidden" name="oEmail" value=" " />
+                <input
+                  type="text"
+                  id="Email"
+                  name="Email"
+                  value="<%= session.user.email %>"
+                  class="text_info_style"
+                />
+              </div>
+            </div>
+
+            <div class="d-flex">
+              <div class="info_container_style mr-5">
+                <label for="addr_info">Country:</label><br />
+                <input
+                  type="text"
+                  name="country"
+                  class="address_info_style"
+                />
+              </div>
+
+              <div class="info_container_style">
+                <label for="addr_info">Provinces:</label><br />
+                <input
+                  type="text"
+                  name="provinces"
+                  class="address_info_style"
+                />
+              </div>
+            </div>
+
+            <div class="d-flex">
+              <div class="info_container_style mr-5">
+                <label for="addr_info">Districts:</label><br />
+                <input
+                  type="text"
+                  name="districts"
+                  class="address_info_style"
+                />
+              </div>
+
+              <div class="info_container_style">
+                <label for="addr_info">Address:</label><br />
+                <input
+                  type="text"id="AddrInfo"
+                  name="AddrInfo"
+                  value="<%= session.user.address.number%> <%= session.user.address.ward%> <%= session.user.address.city%>"
+                  class="address_info_style"
+                />
+              </div>
+            </div>
+          <button type="submit">Save</button>
+        </form>
+      <% } %>
+      </div>
+    </div>
+  </div>
+    <%- include('../partials/footer'); -%> <%-
+    include('../partials/script-line'); -%>
+  </body>
+</html>

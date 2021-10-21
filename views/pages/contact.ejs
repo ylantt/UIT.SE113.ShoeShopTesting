@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); -%>
+  </head>
+  <body>
+    <%- include('../partials/nav'); -%>
+    <div class="container">
+      <nav>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-items">
+            <a href="home">Home</a>
+          </li>
+          <span>&ThickSpace;&#62;&ThickSpace;</span>
+          <li class="breadcrumb-item active">Contact us</li>
+        </ul>
+      </nav>
+      <h1 class="contract__title">Contact us</h1>
+
+        <form class="contract__form">
+         <div class="contract__lable">
+          
+            <input class="contract__input" id="contact_fullName" type="text" placeholder="Your Name" value="<%= (session.user && typeof session.user != 'undefined') ? session.user.fullName : '' %>">
+         </div>
+           <div class="contract__lable"> 
+             <input  class="contract__input contact_email" type="text" placeholder="Your Email Address" value="<%= (session.user && typeof session.user != 'undefined') ? session.user.email : '' %>">
+            </div>
+          <div class="contract__lable">  
+            <textarea name="message" id="" class="contract__textarea contact_message" placeholder="Message" cols="30" rows="10"></textarea>
+          </div>
+          <div class="contract__lable">  
+            <input type="submit" class="contract__btn" id="submitContact"  value="Send Message" >
+          </div>
+          
+        </form>
+    </div>
+    <%- include('../partials/footer'); -%> <%-
+    include('../partials/script-line'); -%>
+  </body>
+</html>
+
+

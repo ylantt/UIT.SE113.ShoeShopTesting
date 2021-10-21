@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../template/header.ejs'); -%>
+  </head>
+  <body>
+    <div class="d-flex h-100">
+      <div class="col-2 pl-0 h-100 w-25 fixed-top">
+        <%- include('../template/sidebar.ejs'); -%>
+      </div>
+      <div class="col-12 w-100 pr-0">
+        <%- include('../template/navbar.ejs'); -%>
+        <div class="col-10 ml-auto">
+          <nav class="navbar navbar-light mt-2 mr-2" style="background-color: white;">
+            <a class="navbar-brand" href="dashboard">Dashboard
+              <a class="text-primary font-weight-bold" href="#"> N7 Shop </a>
+            </a>
+          </nav>
+          <div class="d-flex mt-3 mb-3">
+            <div class="card flex-fill mr-2"style="background-color: #6200FF ;">
+              <div class="card-body">
+                <h5 class="card-title text-white"><%= user.length%> </h5>
+                <h6 class="card-subtitle mb-2 text-white">
+                  Members online
+                </h6>
+                
+              </div>
+            </div>
+
+            <div class="card flex-fill mr-2" style="background-color: #189CFF;">
+              <div class="card-body">
+                <% const result = orders.filter(order => order.status == true);%>          
+                <h5 class="card-title text-white font-weight-bold"><%= result.length%>  </h5>
+                <h6 class="card-subtitle mb-2 text-white">
+                  Orders Delivered
+                </h6>
+              </div>
+            </div>
+
+            <div class="card flex-fill mr-2" style="background-color: #FFC200;">
+              <div class="card-body">
+                <h5 class="card-title text-white">2</h5>
+                <h6 class="card-subtitle mb-2 text-white">
+                  <i class="fas fa-user-nurse"></i>
+                  Users Feedback
+                </h6>
+              </div>
+            </div>
+
+            <div class="card flex-fill mr-2" style="background-color: #FF0E4E">
+              <div class="card-body">
+                <% const reducer = (accumulator, currentValue) => accumulator + currentValue.total;%>
+                <h5 class="card-title text-white">$<%=result.reduce(reducer, 0)  %>  </h5>
+                <h6 class="card-subtitle mb-2 text-white">
+                  Total sales
+                </h6>
+              </div>
+            </div> 
+          </div>
+          <div id="chart_div" style="width: 99%; height: 500px;"></div>
+          <!-- google chart -->
+          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Members', 'Oders', 'Sales', 'Feedbacks'],
+          ['2018',  1000,      400,      300,      100],
+          ['2019',  1170,      460,      670,      700],
+          ['2020',  660,       1120,     900,      1000],
+          ['2021',  1068,      540,     1230,      500]
+        ]);
+
+        var options = {
+          title: 'N7 Performance',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 100},
+          backgroundColor: 'white'
+
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+         
+  </body>
+  <%- include('../template/footer.ejs'); -%>
+</html>

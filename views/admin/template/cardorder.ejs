@@ -1,0 +1,58 @@
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Customer</th>
+        <th scope="col">Address</th>
+        <th scope="col">Date</th>
+        <th scope="col">Total</th>
+        <th scope="col">Status</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% orders.forEach(order => {%>
+        <tr class="order" data-toggle="modal">
+          <th scope="row"><%= order._id %> </th>
+          <td><%= order.user.fullName %></td>
+          <td><%= order.user.fullAddress %> </td>
+          <td>
+            <%= order.createdDate.getDate() %>/ <!--day-->
+            <%= order.createdDate.getMonth()+1%>/ <!--month-->
+            <%= order.createdDate.getFullYear()%> <!--year-->
+          </td>
+          <td>&dollar;<%= order.total / 100%></td>
+          <td>
+            <select class="form-select status" data-status="<%= order.status %>">
+              <option value="false">Shipping</option>
+              <option value="true">Shipped</option>
+            </select>
+            <button
+              type="button"
+              class="btn d-none newStatus"
+              data-id="<%= order._id %>"
+            >&#9989;</button>
+            <%# if (!order.status) { %>
+              <!-- Not yet shipped<button
+              type="button"
+              class="btn"
+              data-toggle="tooltip"
+              title="Change status to Delivered"
+              data-placement="Delivered"
+            >
+              &#9989;
+            </button>
+            <%# } else { %>
+             <p>Shipped</p> -->
+            <%# } %>
+          </td>
+          <td>
+            <div class="btn-group" role="group">
+              <!-- <button type="button" class="btn btn-success" data-toggle="modal" data-target="#orderDetail">Detail</button> -->
+              <button type="button" data-id="<%= order._id %>" class="btn btn-danger deleteOrderBtn">Delete</button>
+            </div>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+</table>

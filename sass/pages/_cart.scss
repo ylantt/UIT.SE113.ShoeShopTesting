@@ -1,0 +1,140 @@
+.cart {
+    min-height: calc(100vh - 26.6rem - 10rem - 5rem); // minus footer height, nav height,..
+
+    &__noti {
+        text-align: center;
+        font-size: 4rem;
+        font-weight: 700;
+    }
+
+    &__title{
+        font-size: 4rem;
+        text-align: center;
+        color: $color-primary-orange;
+        font-weight: 700;
+        margin-top: 5rem;
+        margin-bottom: 2rem; 
+    }
+    &__header{
+        text-align: left;
+        color: $color-primary-blue;
+        border-bottom: 2px solid $color-primary-orange;
+        // background: $color-primary-orange;
+        font-weight: 700;
+        padding: 0.75rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    &__page{
+        margin: 0 auto;
+    }
+    &__table{
+        max-width: 120rem;
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0 auto;
+        font-size: 2rem;
+        margin-top: 1rem;
+        td{
+            padding-top: 2rem;
+            padding-left: 1rem;
+            input{
+                width: 4.5rem;
+                height: 3rem;
+                padding: 0.5rem;
+                
+            }
+            a{
+                color: red;
+            }
+        }
+    }
+    &__info{
+        display:flex;
+        flex-wrap: wrap;
+        line-height: 2rem;
+        align-items: center;
+
+        img{
+            width: 13rem;
+            height: 13rem;
+            margin-left: -1rem;
+        }
+        div{
+            margin-left: 1.5rem;
+            line-height: 4rem;
+        }
+    }
+    
+    &__total{
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 4rem;
+        padding-bottom: 10rem;
+        table{
+            text-align: right;
+            border-top: 0.2rem solid $color-primary-orange;
+            width: 100%;
+            max-width: 40rem;
+            line-height: 5rem;
+            font-size: 2rem;
+            padding-top: 1.5rem;
+        }
+    }
+    
+    &__bottom {
+        position: relative;
+        margin-bottom: 15rem;
+    }
+    
+    &__OrdBtn{
+        width: 20rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+    
+        font-size: 1.7rem;
+        color: $color-black;
+        text-align: center;
+        font-weight: bold;
+    
+        transition: 0.3s;
+        outline: none;
+        border-radius: 0.5rem;
+        background: $color-primary-orange;
+        border: none;
+        cursor: pointer;
+    
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        &:hover{
+            background-color: $color-primary-brown;
+            color: $color-white;
+        }
+    }
+    
+    &__product-name {
+        color: $color-primary-blue;
+        font-weight: 700;
+    }
+    
+    &__product-price {
+        color: $color-primary-orange;
+    }
+
+    &__total-resut {
+        color: $color-primary-orange;
+        font-weight: 700;
+        input{
+            width: 30%;
+            border: none;
+            background: transparent;
+            color: $color-primary-orange;
+            font-weight: 700;
+            font-size: 2rem;
+            text-align: right;
+        }
+    }
+}

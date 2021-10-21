@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); -%>
+  </head>
+  <body>
+    <%- include('../partials/nav'); -%>
+    <div class="card border-dark justify-content-center" style="max-width: 50rem; margin: 10rem auto">
+        <div class="card-header">
+            <h3 class="heading-h4" style="text-align: center;">Verify your email</h3>
+        </div>
+        <div class="card-body text-dark">
+            <form class="form">
+                <div class="verify__form">
+                    <p>You're almost there! We've sent an email to</p>
+                    <p><strong><%= email %></strong></p>
+                </div>
+                <div class="verify__form">
+                    <p>Click on the link in that email to complete your signup</p>
+                    <p>If you don't see it, you may need to check you <strong>spam</strong> folder</p>
+                </div>
+                <div class="verify__form">
+                    <p>Still can't find the mail?</p>
+                    <input
+                        class="btn-submit"
+                        type="submit"
+                        name="submit"
+                        value="Resend Email"
+                    />
+                    <p>Need help? <a href="">Contact us</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <%- include('../partials/footer'); -%> <%-
+    include('../partials/script-line'); -%>
+    <script>
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+.policy{
+    margin-bottom: 15rem;
+
+    &__content{
+        margin: 5rem 10rem;
+    }
+    &__title-container{
+        border: 1px solid #e5e5e5;
+        padding: 2rem 8rem;
+    }
+    &__info{
+        border-bottom: 1px solid #e5e5e5;
+        padding-bottom: 1rem;
+        font-weight: 700;
+        font-size: 2rem;
+        color: $color-primary-orange;
+    }
+    &__info-content{
+        padding-top:2rem;
+        padding-left:2rem;
+        & > p{
+            padding-top: 2rem;   
+        }
+        & li{
+            padding-left: 1.5rem;
+            margin-left: 2rem;
+            position: relative;
+            &::before {
+                content: "";
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background: $color-primary-orange;
+                position: absolute;
+                top: 30%;
+                left: 0;
+            }
+      }
+    }
+}

@@ -1,0 +1,84 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; 
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  width: 120rem;
+  margin: 0 auto;
+}
+
+.active, .text-bold {
+  font-weight: 700;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.disabled-link {
+  cursor: pointer;
+  color: inherit;
+
+  & a {
+    pointer-events: none;
+  }
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($color-black, .5);
+  pointer-events: none;
+  z-index: 1000;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal {
+  box-shadow: 0px 5px 10px 10px rgba(#000, 0.3);
+}
+
+input[name="location"] {
+  display: none;
+}
+
+.flex-center-column {
+  @include flex-center;
+  flex-direction: column;
+}

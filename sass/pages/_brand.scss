@@ -1,0 +1,352 @@
+.brandinfo{
+      &__img-palladium{
+        margin-left:45rem;
+        margin-top: 10rem; 
+        height: 30rem;
+        width: 30rem; 
+          opacity: 30%;
+          transition: all 0.3s ease-in;
+          &:hover{
+          opacity: 90%;
+          }
+      }
+      &__img-converse{ 
+        width: 50rem;
+        height: auto;
+        margin:10rem auto;
+          opacity: 30%;
+          transition: all 0.3s ease-in;
+          &:hover{
+          opacity: 90%;
+          }
+      }
+      &__img-vans{ 
+        width:40rem;
+        height:auto;
+        margin:10rem auto;
+          opacity: 30%;
+          transition: all 0.3s ease-in;
+          &:hover{
+          opacity: 90%;
+          }
+      }
+      &__brandtitle{
+        margin: 5rem 30rem 5rem 30rem;
+        border-width: 5rem;
+        align-items: center;
+        
+      }
+      &__paginationcontainer{
+        display:flex;
+        float:right;
+        margin-top: 1rem;
+        padding-top:5rem;
+        margin-bottom:10rem;
+      }
+      &__filter{
+        margin: 2rem 10rem 2rem 15rem;
+        align-items: center;
+        display:flex;
+        padding: 1.2rem;
+        input[type=text] {
+          width: 15rem;
+          height: 2.7rem;
+          margin-left: 2rem;
+          border: 0.1rem solid ;
+          border-radius: 0.4rem;
+          outline:none;
+          padding: 1.2rem 1.4rem;
+      }
+      }
+      &__filter-searchcontainer{
+        display: flex;
+        margin-top:0.8rem;
+        
+        
+        
+      }
+      &__filter-searchcontainer-btn{
+        float: right;
+        margin-right: 1.6rem;
+        button{ 
+          margin-left:1.2rem;
+          height: 3rem;
+          border-radius: 1.9rem;
+          border-width: 0;
+          padding: 0 1.2rem;
+          outline: none;
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          justify-content:center;
+          background-color: $color-dark-4;
+          &:hover{
+            color:$color-dark-1;
+            transition:0.3s;
+          }
+        }
+    }
+    &__img-cv{ 
+      width: 50rem;
+      height: auto;
+      margin:10rem auto;
+        opacity: 30%;
+        transition: all 0.3s ease-in;
+        &:hover{
+        opacity: 90%;
+        }
+    }
+    &__img-vans{ 
+      width:40rem;
+      height:auto;
+      margin:10rem auto;
+        opacity: 30%;
+        transition: all 0.3s ease-in;
+        &:hover{
+        opacity: 90%;
+        }
+    }
+    &__brandtitle{
+      margin: 5rem 30rem 5rem 30rem;
+      border-width: 5rem;
+      align-items: center;
+      
+    }
+    &__paginationcontainer{
+      display:flex;
+      float:right;
+      margin-top: 1rem;
+      padding-top:5rem;
+      margin-bottom:10rem;
+    }
+    &__filter{
+      margin: 2rem 10rem 2rem 15rem;
+      align-items: center;
+      display:flex;
+      padding: 1.2rem;
+      input[type=text] {
+        width: 15rem;
+        height: 2.7rem;
+        margin-left: 2rem;
+        border: 0.1rem solid ;
+        border-radius: 0.4rem;
+        outline:none;
+        padding: 1.2rem 1.4rem;
+    }
+    }
+    &__filter-searchcontainer{
+      display: flex;
+      margin-top:0.8rem;
+      
+      
+      
+    }
+    &__filter-searchcontainer-btn{
+      float: right;
+      margin-right: 1.6rem;
+      button{ 
+        margin-left:1.2rem;
+        height: 3rem;
+        border-radius: 1.9rem;
+        border-width: 0;
+        padding: 0 1.2rem;
+        outline: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content:center;
+        background-color: $color-dark-4;
+        &:hover{
+          color:$color-dark-1;
+          transition:0.3s;
+        }
+      }
+    }
+    &__filter-label{
+      margin-right:1.6rem;
+      text-transform: uppercase;
+    }
+    &__filter-btn{
+      margin-right:1.2rem;
+      min-width:12.4rem;
+      height: 3.5rem;
+      border-radius: .9rem;
+      border-width: 0;
+      padding: 0 1.2rem;
+      outline: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content:center;
+      line-height:4rem;
+      text-transform: uppercase;
+      background-color: $color-dark-4;
+      &:hover{
+        color:$color-dark-1;
+        transition:0.3s;
+      }
+    }
+    &__filter-selection-container{
+      min-width: 15.4rem;
+      padding: 0 .2rem;
+      height:3.4rem;
+      border-radius:.9rem;
+      display:flex;
+      justify-content: space-between;
+      background-color:$color-dark-4;
+      align-items: center;
+      padding-left: 2rem;
+      position:relative;
+
+      &:hover &__option{
+        display: block;
+        padding: 0.4rem 0;
+        &:hover{
+          color:$color-dark-2;
+        }
+      }
+      &__tag-container{
+        flex: 0;
+        padding-top:5.3rem;
+        padding-right: 2rem;
+        margin-left: 10rem;
+        margin-right: 10rem;
+      }
+      &__tag-size{
+        padding: 1rem;
+        font-weight: 600;
+        color: $color-primary-orange;
+      }
+      &__tag{
+        border-bottom: 0.1rem solid $color-dark-4;
+        padding: 1rem;
+        margin: 0.2rem;
+        & p{
+        &:hover{
+          color:$color-primary-orange;
+        }
+      }
+      }
+      
+      &__option{
+        display:none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding-left: 1.5rem;
+        top: 3.44rem;
+        border-radius: 0.5rem;
+        border-width:2rem;
+        background-color: $color-dark-4;
+        padding-left:0.8rem 1.6rem;
+        list-style:none;
+      }
+
+    }
+    &__filter-selection{
+      position: relative;
+
+      &__icon{
+        margin: 0 1.6rem 0 0.8rem;
+        position: relative;
+        top:0.1rem;
+      }
+      
+    }
+    &__select-input{
+      display: block;
+      padding: 0.4rem 0;
+      background-color:$color-dark-4;
+      border-width: 0;
+      &:hover{
+        color:$color-dark-2;
+      }
+    }
+    &__float{
+     display:flex;
+    }
+
+    &__product{
+     flex:auto;
+     height:auto;
+     img{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 85%;
+      height: auto;
+  }
+    }
+    &__product-container{
+      margin-left: 5rem;
+    }
+    &__product{
+      padding-right: 2rem;
+    }
+}
+
+.filter-section {
+  flex: 0.25;
+  flex-direction: column;
+  padding: 3rem;
+  margin-right: 3rem;
+  border-right: 1px solid $color-dark-4;
+  
+  & form {
+    margin: 1rem 0 2rem;
+  }
+
+  & .row {
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+  }
+
+  & .search-input {
+    padding: 0.4rem 2rem;
+  }
+}
+
+.brandinfo__float .product {
+  flex: 0.75;
+  &__item {
+    width: calc(33.3% - 15px);
+  }
+}
+
+#maxPrice {
+  width: 80%;
+  height: 2rem;
+}
+
+.submit-filter-btn {
+  padding: 0.6rem 1.5rem;
+  background: $color-primary-pink;
+  font-weight: 700;
+  border: none;
+
+  &:hover {
+    background: $color-primary-orange;
+    color: $color-white;
+    cursor: pointer;
+  }
+}
+
+.sort {
+  padding-top: 1rem;
+  cursor: pointer;
+
+  &::before {
+    content: "-";
+    width: 1rem;
+    height: 1rem;
+    margin-right: 1rem;
+  }
+
+  &:hover {
+    color: $color-primary-orange;
+  }
+
+  &__list {
+    padding-left: 3rem;
+  }
+}

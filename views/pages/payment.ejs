@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); -%>
+    <!--stripe-->
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <script>
+        var stripePublicKey = '<%= stripePublicKey %>'
+    </script>
+</head>
+<body>
+    <%- include('../partials/nav'); -%>
+    <div class="container">
+    <div class="payment">
+        <div class="payment__main d-flex">
+            <section class="payment__main-row">
+                <form class="payment__form">
+                    <div class="payment__form-title">Shipment Details</div>
+                   
+                    <div class="payment__form-fomat  ">
+                        <input class="payment__form-control" id="name" placeholder="FULL NAME" type="text" size="30" autocapitalize="off" spellcheck="false">
+                    </div>
+                    <div class="payment__form-fomat">
+                        <input class="payment__form-control" id="email" placeholder="EMAIL" type="email" size="30" autocapitalize="off" spellcheck="false">
+                    </div>
+                    <div class="payment__form-fomat">
+                        <input class="payment__form-control" id="phone" placeholder="PHONE NUMBER " type="tel" size="30" autocapitalize="off" spellcheck="false" maxlength="15">
+                    </div>
+                    <div class="payment__form-fomat col-1">
+                        <select class="payment__form-control" id="address-country-field">	
+                            <option value="default" selected disabled>Country</option>
+                            <% countries.forEach(country => { %>
+                                <option value="<%= country['isoCode'] %>"><%= country['name'] %></option>
+                            <% }); %>
+                        </select>
+                    </div>
+
+                    <div class="payment__form-fomat col-1">
+                        <select class="payment__form-control" id="address-state-field" >
+                            <option value="default" data-code="null" value="null" selected disabled>State</option>
+                        </select>
+                    </div>
+                    <div class="payment__form-fomat col-1">
+                        <select class="payment__form-control " id="address-city-field" >
+                            <option value="default" data-code="null" value="null" selected disabled>City</option>         
+                        </select>
+                    </div>
+                    <div class="payment__form-fomat col-1"> 
+                        <input class="payment__form-control" id="address-detail-field" placeholder="ADDRESS" type="text" size="30" autocapitalize="off" spellcheck="false">
+                    </div>
+                    <div class="payment__form-fomat">
+                        <input class="payment__input" type="checkbox" name="update" >
+                        Update the latest program information from Sneaker City
+                    </div>
+
+                    <div class=" payment__form-title">method of delivery</div>
+
+                    <div class="payment__form-fomat col-2">
+                        <input class="payment__input" type="radio" name="delivery" value="normal" checked >
+                        Standard speed (2 - 5 working days)
+                    </div>
+                    <div class="payment__form-fomat col-3">$0</div>
+                    <div class=" payment__form-title"> payment method </div>
+                    <div class="payment__form-fomat">
+                        <input class="payment__input" type="radio" name="type" value="direct" checked>
+                        Payment on delivery 
+                        <img class="payment__img" src="/images/ship-cod.jpg" alt="ship-cod">
+                    </div>
+                    <div class="payment__form-fomat">
+                        <input class="payment__input" type="radio" name="type"  value="onepay">
+                        Payment by international and domestic card (ATM)
+                        <img class="payment__img"  src="/images/visa-logo.jpg" alt="visa">
+                    </div>
+                    <!--<div class="payment__form-fomat">
+                        <input class="payment__input" type="radio" name="type" value="momo">
+                        Payment by Momo wallet
+                            <img class="payment__img" src="/images/MoMo_Logo.jpg" alt="momo">
+                    </div>-->
+                </form> 
+            </section>
+            <section class="payment__main-sidebar"> 
+                <ul class="listgroup">
+                    <li class="listgroup__item title">ORDER SUMMARY</li>
+                    <li class="divider"></li>
+                    <% products.forEach(product => { %>
+                        <div class="payment__product-list">
+                            <div class="product_id" style="display: none;" data-product-id="<%= product.item._id %>"></div>
+                            <li class="listgroup__item ">
+                                <span class="text-left payment__product-name"><%= product.item.name %></span>
+                                <span class="text-right payment__product-price">$<%= product.item.price %></span>
+                            </li>
+                            <li class="listgroup__item">
+                                <span class="text-left">Size: 37</span>
+                                <span class="qty">x <%= product.qty; %></span>
+                            </li>
+                        </div>
+                    <% }); %>
+                    <!-- <li class="divider"></li>                    
+                    <li class="listgroup__item">
+                        <input class="text-left payment__form-control" placeholder="Coupon Code"></input>
+                        <button class="text-right button-right"> Use</button>
+                    </li>
+                    <li class="listgroup__item">
+                        <span class="text-left">Subtotal</span>
+                        <span class="text-right"> 
+                            $<span><%#= total%></span>
+                        </span>
+                    </li>
+                    
+                    <li  class="listgroup__item">
+                        <span class="text-left">Discount</span>
+                        <span class="text-right">
+                            - $ <span>0</span>
+                        </span>
+                    </li>
+                    <li  class="listgroup__item">
+                        <span class="text-left">Transport Fee</span>
+                        <span class="text-right">
+                            $ <span>0</span>
+                        </span>
+                    </li>
+                    <li  class="listgroup__item">
+                        <span class="text-left">Payment Fee</span>
+                        <span class="text-right">
+                            $ <span>0</span>
+                        </span>
+                    </li> -->
+                    <li class="divider"></li>
+                    <li  class="listgroup__item">
+                        <span class="text-left title">Total</span>
+                        <span class="text-right cost">
+                            $ <%= total%>
+                        </span>
+                    </li>
+                    <li class="listgroup__item">
+                        <!--<input type="submit" class="button" id="orderBtn" value="Order Success">-->
+                        <button class="button" id="orderBtn">Order</button>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</div>
+    <%- include('../partials/footer'); -%> <%-
+    include('../partials/script-line'); -%>  
+</body>
+<script> //script fill user 
+    const delay = ms => new Promise(res => setTimeout(res, ms));
+    async function fillUserDetail() {
+        if (typeof '<%- session.user%>' != "undefined") {
+            $("#name").val('<%- session.user.fullName%>');
+            $("#email").val('<%- session.user.email%>')
+            $("#phone").val('<%- session.user.phone%>')
+            if (typeof '<%- session.user.address%>' != "undefined" && !('<%-session.user.address%>'==="")) {
+                $("#address-detail-field").val('<%- session.user.address.detail%>')
+                $("#address-country-field").val("<%- session.user.address.country %>").change();
+                await delay(200);
+                $("#address-state-field").val("<%- session.user.address.state %>").change();
+                await delay(200);
+                $("#address-city-field").val("<%- session.user.address.city %>").change();
+            } else return;
+        }
+    }
+    $(document).ready(fillUserDetail)
+</script>
+<script src="/js/autoLoadLocation.js"></script>
+<script src="/js/checkout.js"></script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../../template/header.ejs'); -%>
+</head>
+
+<body>
+  <div class="d-flex h-100">
+    <div class="col-2 pl-0 h-100 w-25 fixed-top">
+      <%- include('../../template/sidebar.ejs'); -%>
+    </div>
+    <div class="col-12 w-100 pr-0">
+      <%- include('../../template/navbar.ejs'); -%>
+        <div class="col-10 ml-auto">
+          <div class="d-flex justify-content-between pt-3">
+            <h1 class="text-primary text-uppercase">Edit product</h1>
+          </div>
+          <hr />
+          <div class="ml-3">
+            <form enctype="application/x-www-form-urlencoded" class="needs-validation" method="POST"
+              action="/admin/api/product/edit/<%= product.id %>?_method=PUT">
+              <%- include('../../template/_productFormFields.ejs'); -%>
+                <form>
+                  <div class="d-flex justify-content-between">
+                    <div class="form-inline">
+                      <div class="col-sm-5">
+                        <button class="btn btn-success" type="submit">Update</button>
+                      </div>
+                      <div class="col">
+                        <a class="btn btn-danger" href="/admin/products/">Cancel</a>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div>
+</body>
+<%- include('../../template/footer.ejs'); -%>
+<script async>
+  tinymce.init({
+    selector: '#productDesc',
+    height: 400,
+    setup: function(editor) {
+      editor.on('init',function(e){
+        editor.setContent('')
+        '<% desc.forEach(line => { %>'
+          editor.execCommand('mceInsertContent', false, '<%- line %>')
+        '<% }) %>' 
+      })
+    }
+  });
+  $("#productName").val('<%= product.name%>');
+  $("#productShortDesc").val("<%= product.description%>");
+  $("#productCate").val($("option:contains('<%= product.category[0].name%>')").val()).change();
+  $("#productPrice").val('<%= product.price%>');
+  $("#pSaleOff").val('<%= product.sale%>');
+  $("#<%= product.condition %>").prop("checked",true)
+  $("#quantity").val('<%= product.quantity%>');
+</script>
+</html>

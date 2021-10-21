@@ -1,0 +1,92 @@
+.account__text{
+    font-size: 3rem;
+    color: $color-primary-orange;
+    padding-bottom: 1rem;
+}
+.flex_container{
+    display: flex;
+    padding: 2rem 3rem;
+    margin: 10rem 0rem;
+    & h3{
+            text-emphasis: bold;
+            font-size: 5rem;
+    }
+}
+
+.right_flex_container{
+    margin: 10rem 0;
+    & button{
+        border: solid 0.1rem;
+        border-radius: 2.9rem;
+        font-size: large;
+        height: 3.5rem;
+        width: 15rem;
+        background-color: $color-primary-blue;
+        color: $color-dark-3;
+        margin-top: 3rem;
+        
+        &:hover{
+            background-color: $color-primary-brown;
+        }
+    }
+}
+
+.account__SaveBtn{
+    background-color: lighten($color-primary-orange,20%);
+    border: none;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+    padding: 0.8rem;
+    transition: all 0.3s linear;
+    font-size: 16px;
+    &:hover{
+        background-color: darken($color-primary-orange, 10%);
+        color: $color-white;
+        cursor: pointer;
+    }
+}
+
+.info_container_style{
+    margin-top: 3rem;
+    & label{
+
+        color: $color-primary-blue;
+        font-size: 3rem;
+        text-emphasis: bold;
+    }
+    & input{
+        font-size: 2rem;
+        text-emphasis: bold;
+    }
+}
+
+.text_info_style{
+    width: 50rem;
+    height: 3rem;
+    margin: 1rem 0rem;
+    padding: 0.2rem;
+}
+
+.address_info_style{
+    width: 50rem;
+    height: 3rem;
+    padding: 0.3rem 0.5rem;
+    margin: 1rem 0rem;
+}
+.profile-pic {
+    height: 100%;
+		width: 100%;
+		transition: all .3s ease;
+		&:after{
+			font-family: FontAwesome;
+			content: "\f007";
+			top: 0; left: 0;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			font-size: 190px;
+			background: #ecf0f1;
+			color: #34495e;
+			text-align: center;
+		}
+	}

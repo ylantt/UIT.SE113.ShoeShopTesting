@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); -%>
+  </head>
+  <body>
+    <%- include('../partials/nav'); -%>
+    <div class="cart">
+      <div class="container">
+        <h3 class="cart__title">Orders Details</h3>
+        <div class="cart__page">
+          <table class="cart__table">
+            <tr>
+              <th class="cart__header">Product</th>
+              <th class="cart__header">Quantity</th>
+              <th class="cart__header">Subtotal</th>
+              <th class="cart__header"></th>
+            </tr>
+              <% order.product.forEach(product => { %>
+                <tr>
+                  <td>
+                    <div class="cart__info">
+                      <img src="<%= product.info.coverImagePath %>" alt="<%= product.info.name %>" />
+                      <div>
+                        <p class="cart__product-name">
+                          <%= product.info.name %>
+                        </p>
+                        <small
+                          >Price:
+                          <span class="cart__product-price">$<%= product.info.price %></span></small
+                        >
+                      </div>
+                    </div>
+                  </td>
+                  <td><%= product.qty %></td>
+                  <td>$<%= product.info.price*product.qty%></td>
+                </tr>
+              <% }) %>
+          </table>
+        </div>
+      </div>
+
+      <div class="container cart__bottom">
+        <div class="cart__total">
+          <table>
+            <tr>
+              <td>Order ID:</td>
+              <td><%= order._id %> </td>
+            </tr>
+            <tr>
+              <td>Total:</td>
+              <td>$<%= order.total / 100 %> </td>
+            </tr>
+            <tr class="cart__total-resut">
+              <td>Status:</td>
+              <td>Not shipped</td>
+            </tr>
+          </table>
+        </div>
+        <a href="/orders"class="cart__OrdBtn">Return to Orders</a>
+      </div>
+    </div>
+    <%- include('../partials/footer'); -%> <%-
+    include('../partials/script-line'); -%>
+  </body>
+</html>

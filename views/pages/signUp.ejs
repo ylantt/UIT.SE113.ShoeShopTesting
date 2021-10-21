@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); -%>
+  </head>
+  <body>
+    <%- include('../partials/nav'); -%>
+    <div class="card border-dark justify-content-center" style="max-width: 50rem; margin: 10rem auto">
+        <div class="card-header">
+            <h3 class="heading-h4">Sign up</h3>
+        </div>
+        <div class="card-body text-dark">
+            <form method="POST" action="/client/api/register" class="form">
+                <div class="close-icon icon" data-close-button>
+                  <i class="fas fa-times"></i>
+                </div>
+                <p class="text__box">
+                    <input type="text" 
+                    name="fullname" 
+                    placeholder="Full name"
+                    value = "<%= typeof fullname != 'undefined' ? fullname: '' %>" />
+                  </p>
+                <p class="text__box">
+                  <input type="text" 
+                  name="username" 
+                  placeholder="Username"
+                  value = "<%= typeof username != 'undefined' ? username: '' %>" />
+                </p>
+                <p class="text__box">
+                  <input type="email" 
+                  name="email" 
+                  placeholder="Email address" 
+                  value = "<%= typeof email != 'undefined' ? email: '' %>"
+                  />
+                </p>
+                <p class="text__box">
+                  <input type="text" 
+                  name="phone" 
+                  placeholder="Phone number"
+                  value = "<%= typeof phone != 'undefined' ? phone: '' %>" />
+                </p>
+                <p class="text__box">
+                  <input type="password" 
+                  name="password" 
+                  placeholder="Passwword" 
+                  value = "<%= typeof password != 'undefined' ? password: '' %>"/>
+                </p>
+                <p class="text__box">
+                  <input
+                    type="password"
+                    name="pwdrepeat"
+                    placeholder="Confirm passwword"
+                    value = "<%= typeof pwdrepeat != 'undefined' ? pwdrepeat: '' %>"
+                  />
+                </p>
+                <div><%- include('../partials/message.ejs'); -%></div>
+                <div>
+                  <input
+                    class="btn-submit"
+                    type="submit"
+                    name="submit"
+                    value="Sign up"
+                    id="reg-btn"
+                  />
+                </div>
+                <div>
+                    <p>
+                        Already a member? <span style = "color: #FF7D00"> <a href="/signIn">Log in now.</a></span>
+                    </p>
+                </div> 
+              </form>
+        </div>
+    </div>
+    <%- include('../partials/footer'); -%> <%-
+    include('../partials/script-line'); -%>
+  </body>
+</html>

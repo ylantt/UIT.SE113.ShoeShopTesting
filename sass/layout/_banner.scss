@@ -1,0 +1,40 @@
+.banner {
+  background: url("../images/banner-img.jpg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  height: calc(100vh - #{$nav-height});
+  position: relative;
+  overflow: hidden;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+
+  &__content {
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    width: 30rem;
+
+    & * {
+      animation-name: moveInBottom;
+      animation-timing-function: ease-in;
+    }
+
+    & .heading-h2 {
+      animation-duration: 0.5s;
+    }
+
+    & .heading-h1 {
+      animation-name: moveInBottom;
+      animation-duration: 0.7s;
+      animation-timing-function: ease-in;
+    }
+
+    & .cta {
+      animation-name: moveInBottom;
+      animation-duration: 1s;
+      animation-timing-function: ease-in;
+    }
+  }
+}

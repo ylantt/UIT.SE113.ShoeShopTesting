@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); -%>
+  </head>
+  <body>
+    <%- include('../partials/nav'); -%>
+    <div class="brandinfo">
+      <div class="container">
+        <div class="brandinfo__container">
+          <nav>
+            <ul class="breadcrumb">
+              <li class="breadcrumb-items">
+                <a href="/home">Home</a>
+              </li>
+              <span>&ThickSpace;&#62;&ThickSpace;</span>
+              <li class="breadcrumb-item active"><%= title %></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="brandinfo_container">
+          <% if(title == "vans" || title == "converse" || title == "palladium") {%>
+            <div class='brandinfo__img-<%= title %>'>
+              <img src='/images/<%= title %>-logo.png' />
+            </div>
+          <% }  %> 
+
+            <div class="brandinfo__filter">
+              
+      </div>
+          </div>
+        </div>
+        <div class="brandinfo__float">
+          <div class="brandinfo__product">
+            <div class="brandinfo__product-container d-flex">
+              <div class="filter-section d-flex">
+                <div class="brandinfo__filter-searchcontainer">
+                  <form action="/products" method="GET">
+                    <input class="search-input" id="nav-text-search" type="text" placeholder="Search Product">
+                    <button class="submit-filter-btn">Search</button>
+                  </form>
+                </div>
+
+                <p class="heading-big-section">Filter section</p>
+                <form action="/products" method="GET">
+                  <p class="heading-section">Brand</p>
+                  <div class="row d-flex">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name = "brand" id="vans" value="vans">
+                      <label class="form-check-label" for="vans">Vans</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name = "brand" id="converse" value="converse">
+                      <label class="form-check-label" for="converse">Converse</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name = "brand" id="palladium" value="palladium">
+                      <label class="form-check-label" for="palladium">Palladium</label>
+                    </div>
+                  </div>
+                  <p class="heading-section">Size</p>
+                  <div class="row d-flex">
+                    <div class="col">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name = "shoeSize" id="size35" class = "shoeSizeClass" value="35">
+                        <label class="form-check-label" for="size35">35</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name = "shoeSize" id="size35.5" class = "shoeSizeClass" value="35.5">
+                        <label class="form-check-label" for="size35.5">35.5</label>
+                      </div>
+                
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name = "shoeSize" id="size36" class = "shoeSizeClass" value="36">
+                        <label class="form-check-label" for="size36">36</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name = "shoeSize" id="size36.5" class = "shoeSizeClass" value="36.5">
+                        <label class="form-check-label" for="size36.5">36.5</label>
+                      </div>
+                
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name = "shoeSize" id="size37" class = "shoeSizeClass" value="37">
+                        <label class="form-check-label" for="size37">37</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name = "shoeSize" id="size37.5" class = "shoeSizeClass" value="37.5">
+                        <label class="form-check-label" for="size37.5">37.5</label>
+                      </div>
+                
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name = "shoeSize" id="size38" class = "shoeSizeClass" value="38">
+                        <label class="form-check-label" for="size38">38</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name = "shoeSize" id="size38.5" class = "shoeSizeClass" value="38.5">
+                        <label class="form-check-label" for="size38.5">38.5</label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name = "shoeSize" id="size39" class = "shoeSizeClass" value="39">
+                        <label class="form-check-label" for="size39">39</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name = "shoeSize" id="size39.5" class = "shoeSizeClass" value="39.5">
+                        <label class="form-check-label" for="size39.5">39.5</label>
+                      </div>
+                
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name = "shoeSize" id="size40" class = "shoeSizeClass" value="40">
+                        <label class="form-check-label" for="size40">40</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name = "shoeSize" id="size40.5" class = "shoeSizeClass" value="40.5">
+                        <label class="form-check-label" for="size40.5">40.5</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name = "shoeSize" id="size41" class = "shoeSizeClass" value="41">
+                        <label class="form-check-label" for="size41">41</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name = "shoeSize" id="size41.5" class = "shoeSizeClass" value="41.5">
+                        <label class="form-check-label" for="size41.5">41.5</label>
+                      </div>
+                
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name = "shoeSize" id="size42" class = "shoeSizeClass" value="42">
+                        <label class="form-check-label" for="size42">42</label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name = "shoeSize" id="size42.5" class = "shoeSizeClass" value="42.5">
+                        <label class="form-check-label" for="size42.5">42.5</label>
+                      </div>
+                
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name = "shoeSize" id="size43" class = "shoeSizeClass" value="43">
+                        <label class="form-check-label" for="size43">43</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name = "shoeSize" id="size43.5" class = "shoeSizeClass" value="43.5">
+                        <label class="form-check-label" for="size43.5">43.5</label>
+                      </div>
+                
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name = "shoeSize" id="size44" class = "shoeSizeClass" value="44">
+                        <label class="form-check-label" for="size44">44</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name = "shoeSize" id="size44.5" class = "shoeSizeClass" value="44.5">
+                        <label class="form-check-label" for="size44.5">44.5</label>
+                      </div>
+                
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name = "shoeSize" id="size45" class = "shoeSizeClass" value="45">
+                        <label class="form-check-label" for="size45">45</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name = "shoeSize" id="size45.5" class = "shoeSizeClass" value="45.5">
+                        <label class="form-check-label" for="size43.5">45.5</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p class="heading-section">Max Price</p>
+                  <div class="row">
+                    <div class="col-sm-7 search-input">
+                      <input path="maxPrice" name = "price" type="range" class="form-range" id = "maxPrice" 
+                      min = "0" max = "1000" value="10" list = "marks" />
+                      <span class = "maxPrice">10</span>
+                      <span>$</span>
+                      <script type = "text/javascript">
+                        var priceSeletion = document.querySelector("#maxPrice");
+                        console.log(priceSeletion.value)
+                        if (priceSeletion.value==null ||priceSeletion.value==0){
+                            document.querySelector(".maxPrice").innerText="0";
+                          }
+                        priceSeletion.oninput = function(){
+                          
+                          document.querySelector(".maxPrice").innerText = priceSeletion.value;
+                        }
+                      </script>
+                    </div>
+                  </div>
+
+                  <input class="submit-filter-btn" type="submit" value="Apply" />
+                </form>
+
+                <div class="heading-big-section mt-30">Sort by</div>
+                <span class="sort">Popular</span>
+                <span data-type="products" data-sort="-createdDate" class="sort">Newest</span>
+                <span data-sort="condition" data-type="products" class="sort">Stocks</span>
+                  <div class="sort">Price</div>
+                  <ul class="sort__list">
+                    <li class="sort__item">
+                      <span data-type="products" data-sort="price" class="sort">Lowest</span>
+                    </li>
+                    <li class="sort__item">
+                      <span data-type="products" data-sort="-price" class="sort">Highest</span>
+                    </li>
+                  </ul>
+              
+
+              </div>
+              <%- include('../partials/card-product'); -%>
+            </div>
+            <div class="brandinfo__paginationcontainer">
+              <div class="pagination">
+                <% if (pages > 0) { %>
+                  <ul class="pagination text-center">
+                    <!-- disable First button when current is 1 -->
+                      <% if (current == 1) { %>
+                          <li class="disabled-link"><a>First</a></li>
+                      <% } else { %>
+                          <li><a href="/products?<%= queryString %>&page=1">First</a></li>
+                      <% } %>
+
+                      <!-- determine the start of pagination -->
+                      <% if (Number(current) <= 2) {
+                            i = 1;
+                          } else if (Number(current) > pages - 2 && pages > 5) {
+                            i = pages - 4;
+                          } else {
+                            i = Number(current) - 2;
+                          }
+                          
+                          start = i;
+                      %>
+
+                      <!-- loop through  -->
+                      <% for (; i < start + 5 && i <= pages; i++) { %>
+                          <!-- if i == current => active current link -->
+                          <% if (i == current) { %>
+                            <li class="active"><a><%= i %></a></li>
+                          
+                          <!-- otherwise display links -->
+                          <% } else { %>
+                              <li><a href="/products?<%= queryString %>&page=<%= i %>"><%= i %></a></li>
+                          <% } %>
+                      <% } %>
+                    
+                      <!-- disable Last button when current page is equal number of pages -->
+                      <% if (current == pages) { %>
+                          <li class="disabled-link"><a>Last</a></li>
+                      <% } else { %>
+                          <li><a href="/products?<%= queryString %>&page=<%= pages %>">Last</a></li>
+                      <% } %>
+                  </ul>
+              <% } %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include('../partials/footer'); -%> <%-
+    include('../partials/script-line'); -%>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); -%>
+  </head>
+  <body>
+    <%- include('../partials/nav'); -%>
+    <div class="container">
+      <div class=".error">
+        <div class="error__body">
+          <p class="error__title"><%= title %></p>
+          <p class="error__detail">Oops.</p>
+          <p class="error__more-detail">
+            <%= message %> <br />
+            Try to search again or use to go back button below.
+          </p>
+          <p>
+            <a href="home" class="error__button error__button--large">
+              &LeftArrow; Go back
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <%- include('../partials/footer'); -%> <%-
+    include('../partials/script-line'); -%>
+  </body>
+</html>
