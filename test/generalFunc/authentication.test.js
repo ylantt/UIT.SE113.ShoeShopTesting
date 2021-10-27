@@ -1,10 +1,13 @@
 import { Selector, Role } from 'testcafe';
 import { client, admin } from '../utilities/createRole';
 
+const dotenv = require("dotenv");
+dotenv.config({ path: "./config.env" });
+
 const adminDashboardBtn = Selector('[data-test="adminDashboardBtn"]');
 const navbarUsername = Selector('[data-test="navbar_userName"]');
 
-fixture('Fixture').page('http://127.0.0.1:8000/')
+fixture('Fixture').page(process.env.URL_TEST)
 
 test('should show admin dashboard button in admin role', async (t) => {
   await t
