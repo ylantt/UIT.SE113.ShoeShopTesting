@@ -1,7 +1,7 @@
 <div class="product">
   <div class="row d-flex">
     <% products.forEach(product => { %>
-<div href="detail" class="product__item">
+<div href="detail" class="product__item" data-test="productCard">
       <% if (product.condition) { %>
         <span class="product__new">NEW</span>
       <% } %>
@@ -25,7 +25,7 @@
         </div>
         
         <div class="product__action d-flex">
-          <span style="cursor:pointer" class="product__add add-to-cart-button" data-id="<%= product._id %>">ADD TO CART</span>
+          <span style="cursor:pointer" class="product__add add-to-cart-button" data-id="<%= product._id %>" data-test="addToCartBtn">ADD TO CART</span>
           <div class="product__action--right">
             <a href="/product/<%= product.slug %>" class="product__view"
               ><i class="far fa-eye product__icon"></i
