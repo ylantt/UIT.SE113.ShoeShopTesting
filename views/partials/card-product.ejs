@@ -1,7 +1,11 @@
 <div class="product">
   <div class="row d-flex">
     <% products.forEach(product => { %>
-<div href="detail" class="product__item" data-test="product_item">
+<<<<<<< HEAD
+<div href="detail" class="product__item" data-test="productCard">
+=======
+<div href="detail" class="product__item" data-test="productCard">
+>>>>>>> 3c3a7997d4a6f4288bc8982c665f0ed6b331b5c1
       <% if (product.condition) { %>
         <span class="product__new">NEW</span>
       <% } %>
@@ -25,7 +29,7 @@
         </div>
         
         <div class="product__action d-flex">
-          <span style="cursor:pointer" class="product__add add-to-cart-button" data-id="<%= product._id %>">ADD TO CART</span>
+          <span style="cursor:pointer" class="product__add add-to-cart-button" data-id="<%= product._id %>" data-test="addToCartBtn">ADD TO CART</span>
           <div class="product__action--right">
             <a href="/product/<%= product.slug %>" class="product__view" data-test="fa-eye-btn"
               ><i class="far fa-eye product__icon"></i

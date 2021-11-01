@@ -3,7 +3,7 @@ import { Selector, Role } from 'testcafe';
 const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
 
-const product_item = Selector('[data-test="product_item"]');
+const product_item = Selector('[data-test="productCard"]');
 const faEyeBtn = Selector('[data-test="fa-eye-btn"]');
 
 

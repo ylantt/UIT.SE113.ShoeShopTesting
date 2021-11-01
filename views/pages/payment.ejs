@@ -21,7 +21,7 @@
                         <input class="payment__form-control" id="name" placeholder="FULL NAME" type="text" size="30" autocapitalize="off" spellcheck="false">
                     </div>
                     <div class="payment__form-fomat">
-                        <input class="payment__form-control" id="email" placeholder="EMAIL" type="email" size="30" autocapitalize="off" spellcheck="false">
+                        <input class="payment__form-control" id="email" placeholder="EMAIL" type="email" size="30" autocapitalize="off" spellcheck="false" data-test="emailPayment">
                     </div>
                     <div class="payment__form-fomat">
                         <input class="payment__form-control" id="phone" placeholder="PHONE NUMBER " type="tel" size="30" autocapitalize="off" spellcheck="false" maxlength="15">
@@ -134,7 +134,7 @@
                     </li>
                     <li class="listgroup__item">
                         <!--<input type="submit" class="button" id="orderBtn" value="Order Success">-->
-                        <button class="button" id="orderBtn">Order</button>
+                        <button class="button" id="orderBtn" data-test="paymentBtn">Order</button>
                     </li>
                 </ul>
             </section>
