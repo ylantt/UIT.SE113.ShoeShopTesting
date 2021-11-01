@@ -244,7 +244,7 @@ exports.getCart = async (req, res, next) => {
 
 exports.getPayment = async (req, res, next) => {
   try {
-    if (!req.session.cart.totalQty) {
+    if (req.session.cart === undefined || req.session.cart === null) {
       return res.redirect('/home');
     }
 
@@ -292,7 +292,7 @@ exports.getVerify = (req,res) => {
 exports.getLoginFirst = async(req, res, next) => {
   try {
     // Render template
-    return res.status(200).render("pages/login-first", { title: "Log In first"});
+    return res.status(403).render("pages/login-first", { title: "Log In first"});
   } catch (err) {
     return res.status(404).json({ status: "fail", message: err });
   }
