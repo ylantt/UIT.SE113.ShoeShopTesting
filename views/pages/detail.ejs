@@ -5,7 +5,7 @@
   </head>
   <body>
     <%- include('../partials/nav'); -%>
-    <div class = "share-btn-container">
+    <div class = "share-btn-container" >
 
       <a class = "btn-facebook" href = "#">
         <i class="fab fa-facebook"></i>
@@ -33,7 +33,7 @@
                 <a href="/home">Home</a>
               </li>
               <span>&ThickSpace;&#62;&ThickSpace;</span>
-              <li class="breadcrumb-item active"><%= product.name %></li>
+              <li class="breadcrumb-item active" data-test="name_detail"><%= product.name %></li>
             </ul>
           </nav>
         </div>
@@ -45,7 +45,7 @@
               </div>
             </div>
             <div class="detail__productdetails">
-              <h3 class="detail__product-name"><%= product.name %></h3>
+              <h3 class="detail__product-name" ><%= product.name %></h3>
               <span class="detail__price">
                 <% if (product.sale > 0) { %>
                   <p>
