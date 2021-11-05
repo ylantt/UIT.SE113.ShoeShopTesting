@@ -7,13 +7,12 @@ const product_item = Selector('[data-test="productCard"]');
 const faEyeBtn = Selector('[data-test="fa-eye-btn"]');
 
 
-fixture.only('Fixture').page(process.env.URL_TEST)
+fixture('Fixture').page(process.env.URL_TEST)
 
 test('display',async (t) => {
         const  product_name = await Selector('[data-test="product_name"]')().innerText;
         await t.click(product_item);
         await t.click(faEyeBtn);
-        debug();
         const string = await Selector('[data-test="name_detail"]')().innerText;
         await t.expect(product_name).eql(string);
 });
