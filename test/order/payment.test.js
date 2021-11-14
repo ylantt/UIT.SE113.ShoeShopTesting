@@ -33,7 +33,7 @@ test('Order-3 - Accessing to Checkout page successfully after login and have ite
 // Test case Order-4
 test('Order-4 - Check Payment on delivery method', async (t) => {
     await t
-        .click(paymentBtn)
         .setNativeDialogHandler(() => true)
+        .click(paymentBtn)
         .expect(getLocation()).contains(`${process.env.URL_TEST}/`);
 });
