@@ -24,7 +24,7 @@
                 <div class="wishlist__info">
                   <img src="<%= product.coverImagePath %>" alt="<%= product.name %>" />
                   <div>
-                    <p class="wishlist__product-name">
+                    <p class="wishlist__product-name" data-test="productWishlist">
                       <%= product.name %>
                     </p>
                   </div>
@@ -44,7 +44,7 @@
               </td>
 
               <td>
-                <button class="remove-from-wishlist" data-id="<%= product._id %>">
+                <button class="remove-from-wishlist" data-id="<%= product._id %>" data-test="rmFromWishlist">
                   <i class="fas fa-trash-alt icon-trash" aria-hidden="true"></i>
                 </button>
               </td>
