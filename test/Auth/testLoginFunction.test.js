@@ -1,5 +1,5 @@
 import { Selector, Role, ClientFunction } from 'testcafe';
-import { client, admin } from '../../utilities/createRole';
+import { client, admin } from '../utilities/createRole';
 
 const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
