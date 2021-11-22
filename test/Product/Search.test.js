@@ -8,11 +8,12 @@ const search_input = Selector('[data-test="search_input"]');
 const search_icon = Selector('[data-test="search_icon"]');
 
 //[Product-2] Show search field in navigation bar
-fixture.only('Searching for products').page(process.env.URL_TEST)
+fixture('Searching for products').page(process.env.URL_TEST)
 test('Show search field in navigation bar',async (t) =>{
     await t
     .click(search_input)
     .expect(search_icon.visible).ok();
+
 });
 
 //[Product-3]	Searching for a product: Good search
