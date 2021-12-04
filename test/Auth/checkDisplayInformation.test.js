@@ -1,5 +1,5 @@
 import { Selector, Role, ClientFunction } from 'testcafe';
-import { client, admin } from '../../utilities/createRole';
+import { client, admin } from '../utilities/createRole';
 
 const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
@@ -10,8 +10,6 @@ const signInButton = Selector('[data-test = "signIn_button"]');
 
 
 fixture('Check display information').page(process.env.URL_TEST)
-
-
 
 test('Auth-1 - should show login page after clicking log in button on navbar', async(t) => {
   const getLocation = ClientFunction(() => document.location.href);
