@@ -1,6 +1,6 @@
 <% if(typeof errors != 'undefined') { %>
     <% errors.forEach(function(error){ %>
-        <div class="alert alert-info" role="alert">
+        <div class="alert alert-info" data-test="signUp_errormsg" role="alert">
             <strong><%= error.msg%></strong>
         </div>
     <% }); %>
@@ -8,7 +8,7 @@
 
 <% if (success_msg != '') { %>
     <% success_msg.forEach(function(success_msg){ %>
-        <div class="alert alert-info" role="alert">
+        <div class="alert alert-info" data-test="signUp_errormsg" role="alert">
             <strong><%= success_msg%></strong>
         </div>
     <% }); %>
@@ -16,7 +16,7 @@
 
 <% if (error_msg != '') { %>
     <% error_msg.forEach(function(error_msg){ %>
-        <div class="alert alert-info" role="alert">
+        <div class="alert alert-info" data-test="signUp_errormsg" role="alert">
             <strong><%= error_msg%></strong>
         </div>
     <% }); %>
@@ -24,7 +24,7 @@
 
 <% if (error != '') { %>
     <% error.forEach(function(error_msg){ %>
-        <div class="alert alert-info" role="alert">
+        <div class="alert alert-info" data-test="signUp_errormsg" role="alert">
             <strong><%= error%></strong>
         </div>
     <% }); %>

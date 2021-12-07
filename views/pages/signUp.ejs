@@ -15,39 +15,39 @@
                   <i class="fas fa-times"></i>
                 </div>
                 <p class="text__box">
-                    <input type="text" 
+                    <input type="text" data-test="signUp_fullname"
                     name="fullname" 
                     placeholder="Full name"
                     value = "<%= typeof fullname != 'undefined' ? fullname: '' %>" />
                   </p>
                 <p class="text__box">
-                  <input type="text" 
+                  <input type="text" data-test="signUp_username"
                   name="username" 
                   placeholder="Username"
                   value = "<%= typeof username != 'undefined' ? username: '' %>" />
                 </p>
                 <p class="text__box">
-                  <input type="email" 
+                  <input type="email" data-test="signUp_email"
                   name="email" 
                   placeholder="Email address" 
                   value = "<%= typeof email != 'undefined' ? email: '' %>"
                   />
                 </p>
                 <p class="text__box">
-                  <input type="text" 
+                  <input type="text" data-test="signUp_phone"
                   name="phone" 
                   placeholder="Phone number"
                   value = "<%= typeof phone != 'undefined' ? phone: '' %>" />
                 </p>
                 <p class="text__box">
-                  <input type="password" 
+                  <input type="password" data-test="signUp_password"
                   name="password" 
                   placeholder="Passwword" 
                   value = "<%= typeof password != 'undefined' ? password: '' %>"/>
                 </p>
                 <p class="text__box">
                   <input
-                    type="password"
+                    type="password" data-test="signUp_confirmpass"
                     name="pwdrepeat"
                     placeholder="Confirm passwword"
                     value = "<%= typeof pwdrepeat != 'undefined' ? pwdrepeat: '' %>"
@@ -61,6 +61,7 @@
                     name="submit"
                     value="Sign up"
                     id="reg-btn"
+                    data-test="signUp_submitBtn"
                   />
                 </div>
                 <div>
