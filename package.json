@@ -8,7 +8,7 @@
     "watch:sass": "node-sass sass/main.scss public/css/style.css -w",
     "dev": "npm-run-all --parallel watch:sass nodemon",
     "start": "node server.js",
-    "test": "testcafe chrome:headless test/**/*.test.js"
+    "test": "testcafe chrome test/**/*.test.js"
   },
   "author": "Group 21",
   "license": "ISC",
@@ -53,7 +53,8 @@
     "node-sass": "^5.0.0",
     "nodemon": "^2.0.7",
     "npm-run-all": "^4.1.5",
-    "testcafe": "^1.16.1"
+    "testcafe": "^1.16.1",
+    "typescript": "^3.9.10"
   },
   "engines": {
     "node": "12.16.x",
