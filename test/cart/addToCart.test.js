@@ -35,7 +35,7 @@ test('Cart-1 - Cart empty, Add one item to the cart, Number on cart icon should 
     });
 
         // Test case Cart-3
-test('Cart-3 - Add the same item multiple times and verify, Number on cart icon should increase by 2', async (t) => {
+test('Cart-3 - Add the same item multiple itmes and verify, Number on cart icon should increase by 2', async (t) => {
     await t
         .hover(productCard)
         .click(addToCartBtn)
@@ -57,19 +57,6 @@ test('Cart-4 - Add multiple items of different types and verify, Number on cart 
 });
 
 
-   // Test case Cart-5
-test('Cart-5 - Add item(s) to the cart, close the browser and reopen the same site', async (t) => {
-        await t
-            .hover(productCard)
-            .click(addToCartBtn)
-            .wait(5000)
-            .closeWindow()
-            .openWindow(process.env.URL_TEST)
-            .expect(cartIcon.innerText).eql('1')
-
-            .click(cartIcon)
-            .expect(cartProduct.visible).ok();
-    });//-- lỗi k đóng cửa sổ được
 
 
   // Test case Cart-6
