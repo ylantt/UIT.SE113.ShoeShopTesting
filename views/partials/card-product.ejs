@@ -11,7 +11,7 @@
       <% } %>
       <div class="product__price">
         <% if (product.sale > 0) { %>
-          <p class="product__price--discount"><%= product.price %>&#36;</p>
+          <p class="product__price--discount" data-test="product-price"><%= product.price %>&#36;</p>
         <% } %>
         <p><%= product.priceDiscount %>&#36;</p>
       </div>

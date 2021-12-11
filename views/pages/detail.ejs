@@ -69,7 +69,7 @@
                 <br>
                 <select name="size" id="size" class = "shoeSize-Dropdown">
                   <% for(var i = 0; i < product.shoeSize.length; i++) { %>
-                    <option value="<%= product.shoeSize[i] %>"> <%= product.shoeSize[i] %> </option>
+                    <option value="<%= product.shoeSize[i] %>" data-test="size_option"> <%= product.shoeSize[i] %> </option>
                   <% } %>
                   
                 </select>

@@ -5,7 +5,7 @@
       
       <li <% if (title === 'About') { %>class="active" <% } %> ><a href="/about">About Us</a></li> 
 
-      <li class="nav--hover"><a href="/products">Collection</a></li>
+      <li class="nav--hover"><a href="/products" data-test="nav-product">Collection</a></li>
 
       <ul class="nav__sub-menu">
         <li>
@@ -38,9 +38,9 @@
     </div>
 
     <ul class="flex-center">
-      <li class="nav__search">
-        <input class="nav__search--input scale0" id="nav-text-search" type="text" placeholder="Search Product">
-        <img src="/icon/loupe.svg" alt="Search" id="nav-logo-search" class="icon nav__search--icon" />
+      <li class="nav__search" data-test="search_input">
+        <input class="nav__search--input scale0" id="nav-text-search" type="text" placeholder="Search Product" >
+        <img src="/icon/loupe.svg" alt="Search" id="nav-logo-search" class="icon nav__search--icon" data-test="search_icon"/>
       </li>
 
       <div class="flex-center nav__collapse">
