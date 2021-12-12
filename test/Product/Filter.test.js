@@ -18,7 +18,7 @@ const op_45= Selector('.form-check-label').withAttribute('for', 'size45.5');
 
 const getLocation = ClientFunction(() => document.location.href);
 
-fixture.only('Filter for products').page(process.env.URL_TEST)
+fixture('Filter for products').page(process.env.URL_TEST)
 //[Product-5] Display the product page with search filter tool on it
 test('Display the product page with search filter tool on it',async (t) =>{
     await t
