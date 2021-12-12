@@ -18,7 +18,7 @@ const op_45= Selector('.form-check-label').withAttribute('for', 'size45.5');
 
 const getLocation = ClientFunction(() => document.location.href);
 
-fixture('Filter for products').page(process.env.URL_TEST)
+fixture.only('Filter for products').page(process.env.URL_TEST)
 //[Product-5] Display the product page with search filter tool on it
 test('Display the product page with search filter tool on it',async (t) =>{
     await t
@@ -34,7 +34,7 @@ test('Unit-test-1-for-filter-Good search filter optipon',async (t) =>{
     await t.click(op_35);
     await t.typeText(range_price, "61");
     const name = await (await Selector('[data-test="product_name"]')().innerText).indexOf('Vans');
-    await t.expect(count).gt(-1)
+    await t.expect(name).gt(-1)
     const price = await Selector('[data-test="product-price"]')().innerText;
     const price_t=price.split('$');
     const int_price=parseInt(price_t);
@@ -51,7 +51,7 @@ test('Unit-test-2-for-filter-Good search filter optipon',async (t) =>{
     await t.click(op_45);
     await t.typeText(range_price, "1000");
     const name = await (await Selector('[data-test="product_name"]')().innerText).indexOf('Converse');
-    await t.expect(count).gt(-1)
+    await t.expect(name).gt(-1)
     const price = await Selector('[data-test="product-price"]')().innerText;
     const price_t=price.split('$');
     const int_price=parseInt(price_t);
