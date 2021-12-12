@@ -23,7 +23,7 @@ fixture('Filter for products').page(process.env.URL_TEST)
 test('Display the product page with search filter tool on it',async (t) =>{
     await t
     .click(nav_product)
-    .expect(getLocation()).contains(`${process.env.URL_TEST}products`)
+    .expect(getLocation()).contains(`${process.env.URL_TEST}/products`)
     
 });
 

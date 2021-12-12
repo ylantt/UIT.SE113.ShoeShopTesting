@@ -41,7 +41,7 @@ test('Cart-3 - Add the same item multiple itmes and verify, Number on cart icon 
         .click(addToCartBtn)
         .click(addToCartBtn)
         .wait(5000)
-        .navigateTo(`${process.env.URL_TEST}cart`)
+        .navigateTo(`${process.env.URL_TEST}/cart`)
         .expect(cartIcon.innerText).eql('2')
 });
 
@@ -52,7 +52,7 @@ test('Cart-4 - Add multiple items of different types and verify, Number on cart 
         .click(addToCartBtn)
         .hover(addToCartBtn2)
         .click(addToCartBtn2)
-        .navigateTo(`${process.env.URL_TEST}cart`)
+        .navigateTo(`${process.env.URL_TEST}/cart`)
         .expect(cartIcon.innerText).eql('2')
 });
 

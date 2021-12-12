@@ -27,7 +27,7 @@ test('Auth-12 - Verify if the forgot password link is landed on the right page',
     .expect(getLocation()).contains(`${process.env.URL_TEST}/forgotPassword`)
 })
 
-test.only('Auth-13 - Verify if the input email was sent to the right mail', async(t) => {
+test('Auth-13 - Verify if the input email was sent to the right mail', async(t) => {
     await t
     .click(signInButton)
     .click(forgotpassURL)
