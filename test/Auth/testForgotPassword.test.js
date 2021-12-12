@@ -57,7 +57,16 @@ test('Auth-16 - Verify after click "Search" button with valid username, proceed 
     .expect(getLocation()).contains(`${process.env.URL_TEST}/validate`)
 })
 
-test.only('Auth-22 - Verify that the system does not accept old OTP after the new one was sent', async(t) => {
+test('Auth-17 - Verify if the input username does not exist, after clicking Search button, display an error of (Incorrect username/email)', async(t) => {
+    await t
+    .click(signInButton)
+    .click(forgotpassURL)
+    .typeText('[data-test = "forgotPassField"]', 'abcd')
+    .click(searchAccButton)
+    .expect('[data-test = "errormsg"]').notEql('');
+})
+
+test('Auth-22 - Verify that the system does not accept old OTP after the new one was sent', async(t) => {
     await t
     .click(signInButton)
     .click(forgotpassURL)
