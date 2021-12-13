@@ -42,7 +42,7 @@ test('Unit-test-1-for-filter-Good search filter optipon',async (t) =>{
     await t.click(product_item);
     await t.click(faEyeBtn);
     const size = await Selector('[data-test="size_option"]')().withAttribute('value', '35');;
-    await t.expect(size).gt(-1)
+    await t.expect(size.exists)
 });
 
 test('Unit-test-2-for-filter-Good search filter optipon',async (t) =>{
@@ -73,7 +73,7 @@ test('Unit-test-3-for-filter-Good search filter optipon',async (t) =>{
     await t.click(product_item);
     await t.click(faEyeBtn);
     const size = await Selector('[data-test="size_option"]')().withAttribute('value', '35');;
-    await t.expect(size).gt(-1)
+    await t.expect(size.exists)
 });
 
 test('Unit-test-4-for-filter-Good search filter optipon',async (t) =>{
