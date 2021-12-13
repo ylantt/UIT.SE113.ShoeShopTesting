@@ -10,13 +10,13 @@ const logOutURL = Selector('[data-test = "logOutURL"]');
 
 fixture('Check logout function').page(process.env.URL_TEST)
 
-test('Auth-9 - Process logout function and check whether the username still exsists on navbar or not', async (t) => {
+test('Auth-10 - Process logout function and check whether the username still exsists on navbar or not', async (t) => {
     await t
       .useRole(Role.anonymous())
       .expect(navbarUsername.visible).notOk()
   });
 
-test('Auth-10 - Process login function and confirm there is "Log out" button when clicking on username on navbar', async(t) => {
+test('Auth-11 - Process login function and confirm there is "Log out" button when clicking on username on navbar', async(t) => {
   await t
     .useRole(client)
     .click(navbarUsername)
