@@ -20,5 +20,5 @@ test('Contact1', async t =>{
         .typeText(user_email, 'a@gmail.com')
         .typeText(user_message,'Lop hoc kiem chung phan mem')
         .click(btnSend)
-        .expect(getLocation()).contains(`${process.env.URL_TEST}\contact`);
+       
     })
