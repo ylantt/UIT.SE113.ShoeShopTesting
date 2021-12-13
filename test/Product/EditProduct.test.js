@@ -23,6 +23,7 @@ const product_condition = Selector('[data-test="product-condition"]');
 
 test('EditProduct1', async t =>{
         await t
+        .useRole(admin)
         .typeText(product_name,'Vans UA 1')
         .setFilesToUpload(product_cover_image,'../../public/images/palladium-sizechart.jpg')
         .setFilesToUpload(product_images, '../../public/images/red.jpg')
