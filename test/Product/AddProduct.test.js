@@ -11,9 +11,9 @@ const product_cover_image = Selector('[data-test="product-cover-image"]');
 const product_images = Selector('[data-test="product-images"]');
 const product_description = Selector('[data-test="product-description"]');
 const product_detail = Selector('[data-test="product-detail"]');
-const product_size = Selector('[data-test="product-size"]');
+const product_size = Selector('[data-test="pro-size35"]');
 const product_price = Selector('[data-test="product-price"]');
-const product_category = Selector('[data-test="product-category"]');
+const product_category = Selector('[data-test="pro-brand-vans"]');
 const product_quantity = Selector('[data-test="product-quantity"]');
 const product_discount = Selector('[data-test="product-discount"]');
 const product_condition = Selector('[data-test="product-condition"]');
@@ -29,9 +29,9 @@ test('AddProduct1', async t =>{
         .setFilesToUpload(product_images, '../../public/images/red.jpg')
         .typeText(product_description,'Vans UA 1')
         .typeText(product_detail,'Vans UA 1')
-        .click(product_size, '35')
+        .click(product_size)
         .typeText(product_price,'10')
-        .click(product_category,'vans')
+        .click(product_category)
         .typeText(product_quantity,'20')
         .typeText(product_discount,'10')
         .typeText(product_condition, 'False')
