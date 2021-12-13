@@ -16,3 +16,4 @@ test('display',async (t) => {
         const string = await Selector('[data-test="name_detail"]')().innerText;
         await t.expect(product_name).eql(string);
 });
+

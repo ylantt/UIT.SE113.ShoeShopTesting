@@ -20,16 +20,16 @@
         <form class="contract__form">
          <div class="contract__lable">
           
-            <input class="contract__input" id="contact_fullName" type="text" placeholder="Your Name" value="<%= (session.user && typeof session.user != 'undefined') ? session.user.fullName : '' %>">
+            <input class="contract__input" id="contact_fullName" type="text" data-test="user_name" placeholder="Your Name" value="<%= (session.user && typeof session.user != 'undefined') ? session.user.fullName : '' %>">
          </div>
            <div class="contract__lable"> 
-             <input  class="contract__input contact_email" type="text" placeholder="Your Email Address" value="<%= (session.user && typeof session.user != 'undefined') ? session.user.email : '' %>">
+             <input  class="contract__input contact_email" type="text" data-test="user_email" placeholder="Your Email Address" value="<%= (session.user && typeof session.user != 'undefined') ? session.user.email : '' %>">
             </div>
           <div class="contract__lable">  
-            <textarea name="message" id="" class="contract__textarea contact_message" placeholder="Message" cols="30" rows="10"></textarea>
+            <textarea name="message" id="" class="contract__textarea contact_message" data-test="user_message" placeholder="Message" cols="30" rows="10"></textarea>
           </div>
           <div class="contract__lable">  
-            <input type="submit" class="contract__btn" id="submitContact"  value="Send Message" >
+            <input type="submit" class="contract__btn" id="submitContact" data-test="send_message"  value="Send Message" >
           </div>
           
         </form>
