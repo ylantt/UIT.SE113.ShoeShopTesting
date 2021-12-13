@@ -1,5 +1,5 @@
-import { Selector } from 'testcafe';
-import { client } from '../utilities/createRole';
+import { Selector, ClientFunction } from 'testcafe';
+import { admin } from '../utilities/createRole';
 
 // import environment variables
 const dotenv = require("dotenv");
@@ -14,6 +14,8 @@ fixture('Contact')
     .page(`${process.env.URL_TEST}\contact`)
 
 test('Contact1', async t =>{
+        const getLocation = ClientFunction(() => document.location.href)
+        
         await t
         .setNativeDialogHandler(() => true)
         .typeText(user_name,'a')

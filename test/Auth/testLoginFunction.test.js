@@ -54,3 +54,12 @@ test('Auth-8 - should return error message with inputs: no username and right pa
     .click('[data-test="signIn_submitBtn"]')
     .expect('[data-test = "errormsg"]').notEql('');
 });
+
+test('Auth-9 - should return error message with inputs: no password and right username', async(t) =>{
+    
+    await t
+    .click(signInButton)
+    .typeText('[data-test="signIn_username"]', 'ylantt')
+    .click('[data-test="signIn_submitBtn"]')
+    .expect('[data-test = "errormsg"]').notEql('');
+});

@@ -60,7 +60,7 @@
         <li>
           <a href="/cart" class="flex-center"
             ><img src="/icon/shopping-bags.svg" alt="Cart" class="icon" /><span
-              class="nav__notification" id="cart-number"
+              class="nav__notification" id="cart-number" data-test="cart-number"
               >
               <% if (typeof session.cart != 'undefined') {%>
                 <%= session.cart.totalQty %>

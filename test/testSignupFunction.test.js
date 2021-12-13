@@ -99,7 +99,7 @@ test('SignUp06 - should display Duplicate email or username, please try again', 
   await t
     .click(signUpButton)
     .typeText(signUp_fullname, 'Hiền Nguyễn')
-    .typeText(signUp_username, '@hiennguyen')
+    .typeText(signUp_username, 'hiennguyen')
     .typeText(signUp_email, 'dunghocgioi@gmail.com')
     .typeText(signUp_phone, '0333196549')
     .typeText(signUp_password, '123456789')
@@ -269,16 +269,3 @@ test('Auth28 - should display Passwords should be at least 8 characters', async(
     .expect(signUp_errormsg.innerText)
     .eql('Passwords should be at least 8 characters')
 })
-test('Auth29 - should display Duplicate email or username, please try again', async (t) => {
-  await t
-    .click(signUpButton)
-    .typeText(signUp_fullname, 'Hiền Nguyễn')
-    .typeText(signUp_username, '@hiennguyen')
-    .typeText(signUp_email, 'dunghocgioi@gmail.com')
-    .typeText(signUp_phone, '0333196549')
-    .typeText(signUp_password, '12345678')
-    .typeText(signUp_confirmpass, '12345678')
-    .click(signUp_submitBtn)
-    .expect(signUp_errormsg.innerText).eql('Duplicate email or username, please try again')
-
-});
